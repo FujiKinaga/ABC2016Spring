@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/layout_bazaar_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:background="#f2f2f2"
+        android:visibility="gone"
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"/>
+
+    <RelativeLayout
+        android:paddingLeft="12dp"
+        android:paddingRight="18dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/title_group"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="4dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:id="@+id/title"
+                        android:text="タイトル表示部分"
+                        android:textSize="18sp"
+                        android:minEms="12"
+                        android:maxEms="12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/group"
+                        android:text="グループ表示部分"
+                        android:textSize="12sp"
+                        android:minEms="18"
+                        android:maxEms="18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:id="@+id/location"
+                    android:layout_gravity="center_vertical"
+                    android:text="場所"
+                    android:background="@color/selected"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">ABC2015Summer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!--NavigationDrawer用選択アイテム-->
+    <string name="title_my_schedule">マイスケジュール</string>
+    <string name="title_time_table">タイムテーブル</string>
+    <string name="title_bazaar">バザール</string>
+    <string name="title_conference">カンファレンス</string>
+    <string name="title_session">セッション</string>
+    <string name="title_youtube">Youtubeライブ</string>
+    <string name="title_official_site">公式サイト</string>
+    <string name="title_about">このアプリについて</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_time_table">TimeTableActivity</string>
+
+    <string name="section_first">Section1</string>
+    <string name="section_second">Section2</string>
+    <string name="section_third">Section3</string>
+
+    <string name="section_conference_session">カンファレンス・セッション</string>
+    <string name="section_bazaar">バザール</string>
+
+    <string name="bazaar_site">4F バザール会場</string>
+    <string name="lobby">1F ロビー</string>
+
+    <string name="loc_t0">1F\nホール</string>
+    <string name="loc_t1">9F\n第3研修室</string>
+    <string name="loc_t2">9F\n第2研修室</string>
+    <string name="loc_t3">9F\n第1研修室</string>
+
+    <string name="sess_p1">10F和室</string>
+    <string name="sess_p2">10F第1会議室</string>
+    <string name="sess_p3">10F第2会議室</string>
+    <string name="sess_p4">10F第3会議室</string>
+    <string name="sess_p5">10F第4会議室</string>
+
+
+    <string name="time_now">開催中</string>
+    <string name="time_next">開始前</string>
+    <string name="time_1p">10:00-</string>
+    <string name="time_2p">11:00-</string>
+    <string name="time_3p">12:00-</string>
+    <string name="time_4p">13:00-</string>
+    <string name="time_5p">14:00-</string>
+    <string name="time_6p">15:00-</string>
+    <string name="time_7p">16:00-</string>
+    <string name="time_8p">17:00-</string>
+    <string name="time_9p">18:00-</string>
+    <string name="time_10p">19:00-</string>
+
+    <string name="action_map">地図</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
