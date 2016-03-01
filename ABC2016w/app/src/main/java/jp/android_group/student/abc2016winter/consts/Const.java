@@ -84,8 +84,6 @@ public class Const {
         public TextView mGroup;
         @Bind(R.id.cell_ripple)
         public RippleView mCellRipple;
-        @Bind(R.id.btn_favorite)
-        public ImageButton mFavoriteButton;
 
         public MyScheBazaarViewHolder(View view) {
             super(view);
@@ -104,8 +102,6 @@ public class Const {
         public TextView mRoom;
         @Bind(R.id.cell_ripple)
         public RippleView mCellRipple;
-        @Bind(R.id.btn_favorite)
-        public ImageButton mFavoriteButton;
 
         public MyScheConferenceViewHolder(View view) {
             super(view);

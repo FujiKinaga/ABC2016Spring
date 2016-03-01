@@ -33,6 +33,14 @@
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
+        <jp.android_group.student.abc2016winter.ui.view.StarLayout
+            android:id="@+id/star_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/app_bar">
+
+        </jp.android_group.student.abc2016winter.ui.view.StarLayout>
+
     </android.support.design.widget.CoordinatorLayout>
 
 </RelativeLayout>

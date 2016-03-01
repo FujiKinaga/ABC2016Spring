@@ -13,8 +13,6 @@ import android.view.animation.Transformation;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import jp.android_group.student.abc2016winter.ui.view.AbstractPathAnimator;
-
 /**
  * Created by kinagafuji on 16/03/01.
  */

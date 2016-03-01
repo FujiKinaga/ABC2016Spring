@@ -9,13 +9,13 @@
         android:id="@+id/cell_ripple"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/btn_favorite"
         ripple:rv_color="#BDBDBD"
         ripple:rv_rippleDuration="200">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingRight="16dp">
 
             <TextView
                 android:layout_width="40dp"
@@ -60,16 +60,5 @@
         android:layout_below="@+id/cell_ripple"
         android:background="#BDBDBD"
         android:layout_marginLeft="72dp" />
-
-    <ImageButton
-        android:id="@+id/btn_favorite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:focusable="false"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="16dp"
-        android:focusableInTouchMode="false"
-        android:background="@drawable/ic_star_border_grey_600_36dp" />
 
 </RelativeLayout>
