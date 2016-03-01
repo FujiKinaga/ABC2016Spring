@@ -13,7 +13,6 @@ import java.util.List;
 
 import jp.android_group.student.abc2016winter.R;
 import jp.android_group.student.abc2016winter.consts.Const;
-import jp.android_group.student.abc2016winter.datasource.api.FavoriteAction;
 import jp.android_group.student.abc2016winter.domain.model.Conference;
 
 /**
@@ -52,7 +51,7 @@ public class MyScheConferenceListAdapter extends RecyclerView.Adapter<Const.MySc
 
     @Override
     public void onBindViewHolder(final Const.MyScheConferenceViewHolder holder, final int position) {
-        final Conference conference = mData.get(position);
+        final Conference conference = mData.get(holder.getAdapterPosition());
 
         holder.mTime.setText(conference.getStartTime().substring(11, 16) + " - " + conference.getEndTime().substring(11, 16));
         holder.mTitle.setText(conference.getTitle());
@@ -96,27 +95,10 @@ public class MyScheConferenceListAdapter extends RecyclerView.Adapter<Const.MySc
                 break;
         }
 
-        holder.mFavoriteButton.setBackgroundResource(FavoriteAction.isFavoriteConference(mContext, conference.getId()) ?
-                R.drawable.ic_star_yellow_600_36dp : R.drawable.ic_star_border_grey_600_36dp);
-
-        holder.mFavoriteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (FavoriteAction.isFavoriteConference(mContext, conference.getId())) {
-                    FavoriteAction.unFavoriteConference(mContext, conference.getId());
-                    holder.mFavoriteButton.setBackgroundResource(R.drawable.ic_star_border_grey_600_36dp);
-                } else {
-                    FavoriteAction.favoriteConference(mContext, conference.getId());
-                    holder.mFavoriteButton.setBackgroundResource(R.drawable.ic_star_yellow_600_36dp);
-                    mCallback.onFavoriteClick();
-                }
-            }
-        });
-
         holder.mCellRipple.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override
             public void onComplete(RippleView rippleView) {
-                mCallback.onCellClick(position);
+                mCallback.onCellClick(holder.getAdapterPosition());
             }
         });
     }
@@ -128,7 +110,5 @@ public class MyScheConferenceListAdapter extends RecyclerView.Adapter<Const.MySc
 
     public interface MyScheConferenceCallback {
         void onCellClick(int position);
-
-        void onFavoriteClick();
     }
 }

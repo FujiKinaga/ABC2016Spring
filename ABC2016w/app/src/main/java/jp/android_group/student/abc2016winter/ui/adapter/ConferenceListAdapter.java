@@ -52,7 +52,7 @@ public class ConferenceListAdapter extends RecyclerView.Adapter<Const.Conference
 
     @Override
     public void onBindViewHolder(final Const.ConferenceViewHolder holder, final int position) {
-        switch (mData.keyAt(position)) {
+        switch (mData.keyAt(holder.getAdapterPosition())) {
             case 1:
                 holder.mCategory.setText(mContext.getString(R.string.category_1));
                 break;
@@ -91,7 +91,7 @@ public class ConferenceListAdapter extends RecyclerView.Adapter<Const.Conference
         holder.mCellRipple.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override
             public void onComplete(RippleView rippleView) {
-                mCallback.onCellClick(position, holder.mCategory.getText().toString());
+                mCallback.onCellClick(holder.getAdapterPosition(), holder.mCategory.getText().toString());
             }
         });
     }

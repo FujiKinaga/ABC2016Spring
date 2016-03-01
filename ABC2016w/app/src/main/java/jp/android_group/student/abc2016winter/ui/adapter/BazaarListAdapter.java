@@ -53,7 +53,7 @@ public class BazaarListAdapter extends RecyclerView.Adapter<Const.BazaarViewHold
 
     @Override
     public void onBindViewHolder(final Const.BazaarViewHolder holder, final int position) {
-        final Bazaar bazaar = mData.get(position);
+        final Bazaar bazaar = mData.get(holder.getAdapterPosition());
 
         holder.mTitle.setText(bazaar.getTitle());
         holder.mGroup.setText(bazaar.getGroup());
@@ -108,7 +108,7 @@ public class BazaarListAdapter extends RecyclerView.Adapter<Const.BazaarViewHold
         holder.mCellRipple.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override
             public void onComplete(RippleView rippleView) {
-                mCallback.onCellClick(position);
+                mCallback.onCellClick(holder.getAdapterPosition());
             }
         });
     }

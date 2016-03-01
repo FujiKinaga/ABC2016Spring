@@ -53,7 +53,7 @@ public class TimeTableListAdapter extends RecyclerView.Adapter<Const.TimeTableVi
 
     @Override
     public void onBindViewHolder(final Const.TimeTableViewHolder holder, final int position) {
-        final Conference conference = mData.get(position);
+        final Conference conference = mData.get(holder.getAdapterPosition());
 
         holder.mTime.setText(conference.getStartTime().substring(11, 16) + " - " + conference.getEndTime().substring(11, 16));
         holder.mTitle.setText(conference.getTitle());
@@ -79,7 +79,7 @@ public class TimeTableListAdapter extends RecyclerView.Adapter<Const.TimeTableVi
         holder.mCellRipple.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override
             public void onComplete(RippleView rippleView) {
-                mCallback.onCellClick(position);
+                mCallback.onCellClick(holder.getAdapterPosition());
             }
         });
     }

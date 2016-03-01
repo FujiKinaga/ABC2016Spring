@@ -13,7 +13,6 @@ import java.util.List;
 
 import jp.android_group.student.abc2016winter.R;
 import jp.android_group.student.abc2016winter.consts.Const;
-import jp.android_group.student.abc2016winter.datasource.api.FavoriteAction;
 import jp.android_group.student.abc2016winter.domain.model.Bazaar;
 
 /**
@@ -52,7 +51,7 @@ public class MyScheBazaarListAdapter extends RecyclerView.Adapter<Const.MyScheBa
 
     @Override
     public void onBindViewHolder(final Const.MyScheBazaarViewHolder holder, final int position) {
-        final Bazaar bazaar = mData.get(position);
+        final Bazaar bazaar = mData.get(holder.getAdapterPosition());
 
         holder.mTitle.setText(bazaar.getTitle());
         holder.mGroup.setText(bazaar.getGroup());
@@ -87,27 +86,10 @@ public class MyScheBazaarListAdapter extends RecyclerView.Adapter<Const.MyScheBa
                 break;
         }
 
-        holder.mFavoriteButton.setBackgroundResource(FavoriteAction.isFavoriteBazaar(mContext, bazaar.getId()) ?
-                R.drawable.ic_star_yellow_600_36dp : R.drawable.ic_star_border_grey_600_36dp);
-
-        holder.mFavoriteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (FavoriteAction.isFavoriteBazaar(mContext, bazaar.getId())) {
-                    FavoriteAction.unFavoriteBazaar(mContext, bazaar.getId());
-                    holder.mFavoriteButton.setBackgroundResource(R.drawable.ic_star_border_grey_600_36dp);
-                } else {
-                    FavoriteAction.favoriteBazaar(mContext, bazaar.getId());
-                    holder.mFavoriteButton.setBackgroundResource(R.drawable.ic_star_yellow_600_36dp);
-                    mCallback.onFavoriteClick();
-                }
-            }
-        });
-
         holder.mCellRipple.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override
             public void onComplete(RippleView rippleView) {
-                mCallback.onCellClick(position);
+                mCallback.onCellClick(holder.getAdapterPosition());
             }
         });
     }
@@ -119,7 +101,5 @@ public class MyScheBazaarListAdapter extends RecyclerView.Adapter<Const.MyScheBa
 
     public interface MyScheBazaarCallback {
         void onCellClick(int position);
-
-        void onFavoriteClick();
     }
 }
