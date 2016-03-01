@@ -5,15 +5,22 @@ def versionMinor = 1
 def versionPatch = 0
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
-
+    compileSdkVersion 23
+    buildToolsVersion '23.0.2'
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'LICENSE.txt'
+    }
     defaultConfig {
-        applicationId "jp.android_group.student.abc2015summer"
+        applicationId 'jp.android_group.student.abc2016winter'
         minSdkVersion 14
-        targetSdkVersion 22
-        versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch
+        targetSdkVersion 23
+        versionCode 1
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+        multiDexEnabled true
+        resConfigs "en", "ja"
     }
     buildTypes {
         debug {
@@ -26,13 +33,45 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dexOptions {
+        preDexLibraries false
+        javaMaxHeapSize "2g" // ヒープの最大を 2GB にする
+    }
+
+    productFlavors {
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:22.1.1'
-    compile 'com.android.support:design:22.2.0'
-    compile 'com.android.support:cardview-v7:22.2.0'
-    compile 'com.github.chrisbanes.photoview:library:1.2.3'
-    compile 'com.google.android.gms:play-services:7.5.0'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.commit451:PhotoView:1.2.4'
+    compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile 'com.android.support:design:23.1.0'
+    compile 'com.android.support:cardview-v7:23.1.0'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile('com.mikepenz:materialdrawer:5.0.5@aar') {
+        transitive = true
+    }
+    compile 'com.ogaclejapan.smarttablayout:library:1.6.0@aar'
+    compile 'com.ogaclejapan.smarttablayout:utils-v4:1.6.0@aar'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.gordonwong:material-sheet-fab:1.2.1'
+    compile 'com.github.ksoichiro:android-observablescrollview:1.6.0'
+    compile 'com.github.emanzanoaxa:RippleEffect:52ea2a0ab6'
+    compile 'com.squareup:otto:1.3.8'
+    compile 'com.github.iammert:MaterialIntroView:1.5'
+}
+
+repositories {
+    jcenter()
+    flatDir { dirs 'libs' }
+    maven { url "https://jitpack.io" }
 }

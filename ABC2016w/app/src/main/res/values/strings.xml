@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ABC2015Summer</string>
+    <string name="app_name">ABC2016Winter</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
@@ -9,6 +9,8 @@
     <string name="title_bazaar">バザール</string>
     <string name="title_conference">カンファレンス</string>
     <string name="title_session">セッション</string>
+    <string name="title_live">ライブ</string>
+    <string name="title_vote">投票ページ</string>
     <string name="title_youtube">Youtubeライブ</string>
     <string name="title_official_site">公式サイト</string>
     <string name="title_about">このアプリについて</string>
@@ -21,7 +23,7 @@
     <string name="section_second">Section2</string>
     <string name="section_third">Section3</string>
 
-    <string name="section_conference_session">カンファレンス・セッション</string>
+    <string name="section_conference_session">カンファレンス</string>
     <string name="section_bazaar">バザール</string>
 
     <string name="bazaar_site">4F バザール会場</string>
@@ -41,22 +43,58 @@
 
     <string name="time_now">開催中</string>
     <string name="time_next">開始前</string>
-    <string name="time_1p">10:00-</string>
-    <string name="time_2p">11:00-</string>
-    <string name="time_3p">12:00-</string>
-    <string name="time_4p">13:00-</string>
-    <string name="time_5p">14:00-</string>
-    <string name="time_6p">15:00-</string>
-    <string name="time_7p">16:00-</string>
-    <string name="time_8p">17:00-</string>
-    <string name="time_9p">18:00-</string>
-    <string name="time_10p">19:00-</string>
+    <string name="time_1p">10:00 - 12:10</string>
+    <string name="time_2p">13:00 - 13:40</string>
+    <string name="time_3p">13:55 - 14:35</string>
+    <string name="time_4p">14:50 - 15:20</string>
+    <string name="time_5p">16:15 - 16:55</string>
+    <string name="time_6p">17:10 - 17:50</string>
 
     <string name="action_map">地図</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="time_11">12/21 10:00〜</string>
+    <string name="time_12">12/21 13:00〜</string>
+    <string name="time_13">12/21 13:55〜</string>
+    <string name="time_14">12/21 14:50〜</string>
+    <string name="time_15">12/21 16:15〜</string>
+    <string name="time_16">12/21 17:10〜</string>
+
+    <string name="category_1">基調・特別・招待講演</string>
+    <string name="category_2">開発</string>
+    <string name="category_3">LT／コミュニティー</string>
+    <string name="category_4">コンテンツ／ビジネス</string>
+    <string name="category_5">メーカー／サービス</string>
+    <string name="category_6">デザイン/コミュニティー</string>
+    <string name="category_7">次世代Android</string>
+    <string name="category_8">特別企画１</string>
+    <string name="category_9">特別企画２</string>
+    <string name="category_10">特別企画３</string>
+    <string name="category_11">特別企画４</string>
+
+    <string name="room_1">大講義室(2B101)</string>
+    <string name="room_2">4101教室</string>
+    <string name="room_3">4103教室</string>
+    <string name="room_4">4104教室</string>
+    <string name="room_5">4105教室</string>
+    <string name="room_6">4201教室</string>
+    <string name="room_7">4202教室</string>
+    <string name="room_8">4203教室</string>
+    <string name="room_9">4204教室</string>
+    <string name="room_10">4205教室</string>
+    <string name="room_11">4206教室</string>
+    <string name="room_12">食堂(コメドール)</string>
+
+    <string name="roomstatus_0">未開催</string>
+    <string name="roomstatus_1">空有り</string>
+    <string name="roomstatus_2">混雑</string>
+    <string name="roomstatus_3">満席立見</string>
+    <string name="roomstatus_4">満席入場不可</string>
+    <string name="roomstatus_5">終了</string>
+    <string name="roomstatus_6">予約制</string>
 
 </resources>

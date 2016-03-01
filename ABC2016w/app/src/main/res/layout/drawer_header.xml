@@ -1,20 +1,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
-    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="78dp"
-        android:background="#44a6d7"
-        android:src="@drawable/mainimg"
-        />
+        android:layout_height="102dp"
+        android:background="@drawable/ic_background_header" />
 
-    <FrameLayout
-        android:id="@+id/footer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        />
 </LinearLayout>
