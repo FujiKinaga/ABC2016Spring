@@ -208,4 +208,27 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void searchTimeTable() {
+        getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        mToolBar.setTitle(getString(R.string.title_time_table));
+        getSupportFragmentManager().beginTransaction().replace(R.id.container
+                , new TimeTablePagerFragment()).commit();
+        result.setSelection(1);
+    }
+
+    public void searchConference() {
+        getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        mToolBar.setTitle(getString(R.string.title_conference));
+        getSupportFragmentManager().beginTransaction().replace(R.id.container
+                , new ConferenceListPagerFragment()).commit();
+        result.setSelection(3);
+    }
+
+    public void searchBazaar() {
+        getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        mToolBar.setTitle(getString(R.string.title_bazaar));
+        getSupportFragmentManager().beginTransaction().replace(R.id.container
+                , new BazaarListPagerFragment()).commit();
+        result.setSelection(4);
+    }
 }

@@ -14,7 +14,6 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import jp.android_group.student.abc2016winter.R;
-import jp.android_group.student.abc2016winter.ui.view.Fab;
 
 public class AboutFragment extends Fragment {
 

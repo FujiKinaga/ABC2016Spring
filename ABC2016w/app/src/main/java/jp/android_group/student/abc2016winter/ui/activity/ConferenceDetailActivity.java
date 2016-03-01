@@ -18,11 +18,11 @@ import com.gordonwong.materialsheetfab.MaterialSheetFab;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import jp.android_group.student.abc2016winter.event.BusHolder;
 import jp.android_group.student.abc2016winter.R;
-import jp.android_group.student.abc2016winter.event.StarClickedEvent;
 import jp.android_group.student.abc2016winter.datasource.api.FavoriteAction;
 import jp.android_group.student.abc2016winter.domain.model.Conference;
+import jp.android_group.student.abc2016winter.event.BusHolder;
+import jp.android_group.student.abc2016winter.event.StarClickedEvent;
 import jp.android_group.student.abc2016winter.ui.view.Fab;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
