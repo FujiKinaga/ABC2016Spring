@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 .withActivity(this)
                 .withToolbar(mToolBar)
                 .withHeader(R.layout.drawer_header)
-                .withFooter(R.layout.layout_footer)
+                .withFooter(R.layout.drawer_footer)
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName(getString(R.string.title_time_table)).withIdentifier(1),
                         new PrimaryDrawerItem().withName(getString(R.string.title_my_schedule)).withIdentifier(2),

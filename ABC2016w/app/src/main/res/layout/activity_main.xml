@@ -2,10 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/coordinator"
+        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -41,17 +43,16 @@
 
         </jp.android_group.student.abc2016winter.ui.view.StarLayout>
 
-        <jp.android_group.student.abc2016winter.ui.view.Fab
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:src="@drawable/ic_place_white_24dp"
-            app:backgroundTint="@color/main_color"
-            app:layout_anchor="@+id/coordinator"
-            app:layout_anchorGravity="bottom|right" />
-
     </android.support.design.widget.CoordinatorLayout>
+
+    <jp.android_group.student.abc2016winter.ui.view.Fab
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_place_white_24dp"
+        app:backgroundTint="@color/main_color"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
 
     <com.gordonwong.materialsheetfab.DimOverlayFrameLayout
         android:id="@+id/overlay"

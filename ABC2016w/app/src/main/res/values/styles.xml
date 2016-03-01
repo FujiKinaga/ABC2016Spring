@@ -12,4 +12,10 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
+    <style name="CustomTheme" parent="MaterialDrawerTheme.Light.DarkToolbar.TranslucentStatus">
+        <!-- ...and here we setting appcompat’s color theming attrs -->
+        <item name="drawerArrowStyle">@style/MaterialDrawer.DrawerArrowStyle</item>
+
+    </style>
+
 </resources>
