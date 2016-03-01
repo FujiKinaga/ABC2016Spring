@@ -7,7 +7,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
+import com.andexert.library.RippleView;
 import com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
@@ -38,6 +40,10 @@ public class MyScheduleBazaarFragment extends Fragment implements ShowMyScheBaza
 
     @Bind(R.id.list)
     ObservableRecyclerView mRecyclerView;
+    @Bind(R.id.search_bazaar_ripple)
+    RippleView mSearchBazaarRipple;
+    @Bind(R.id.empty_view)
+    RelativeLayout mEmptyView;
 
     private LinearLayoutManager mLinearLayoutManager;
     private MyScheBazaarListAdapter mAdapter;
@@ -74,6 +80,13 @@ public class MyScheduleBazaarFragment extends Fragment implements ShowMyScheBaza
         mRecyclerView.setOverScrollMode(View.OVER_SCROLL_NEVER);
         mRecyclerView.setScrollViewCallbacks(this);
 
+        mSearchBazaarRipple.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+            @Override
+            public void onComplete(RippleView rippleView) {
+                ((MainActivity) getActivity()).searchBazaar();
+            }
+        });
+
         mMyScheBazaarPresenter.getMyScheBazaarData();
 
         return rootView;
@@ -96,7 +109,14 @@ public class MyScheduleBazaarFragment extends Fragment implements ShowMyScheBaza
     @Subscribe
     public void subscribe(StarClickedEvent event) {
         if (MySchedulePagerFragment.mShowPosition == 1) {
-            mAdapter.notifyItemChanged(event.position);
+            mBazaarList.remove(event.position);
+            mAdapter.notifyItemRemoved(event.position);
+
+            if (mBazaarList.isEmpty()) {
+                mEmptyView.setVisibility(View.VISIBLE);
+            } else {
+                mEmptyView.setVisibility(View.GONE);
+            }
         }
     }
 
@@ -124,6 +144,12 @@ public class MyScheduleBazaarFragment extends Fragment implements ShowMyScheBaza
     public void showResult(List<Bazaar> bazaarList) {
         mBazaarList = bazaarList;
 
+        if (mBazaarList.isEmpty()) {
+            mEmptyView.setVisibility(View.VISIBLE);
+        } else {
+            mEmptyView.setVisibility(View.GONE);
+        }
+
         mAdapter = new MyScheBazaarListAdapter(getActivity(), mBazaarList);
         mAdapter.setMyScheBazaarCallback(this);
         mRecyclerView.setAdapter(mAdapter);
@@ -132,11 +158,6 @@ public class MyScheduleBazaarFragment extends Fragment implements ShowMyScheBaza
     @Override
     public void onCellClick(int position) {
         BazaarDetailActivity.startBazaarDetailActivity(mBazaarList.get(position), position, getActivity());
-    }
-
-    @Override
-    public void onFavoriteClick() {
-        ((MainActivity) getActivity()).setStarLayout();
     }
 
     @Override

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -8,5 +9,77 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/empty_view">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="お気に入りのカンファレンスがまだありません"
+            android:id="@+id/noConferenceTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/conference_image"
+            android:layout_below="@+id/noConferenceTitle"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/icon_conference" />
+
+        <com.andexert.library.RippleView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_color"
+            android:id="@+id/search_time_table_ripple"
+            android:layout_below="@+id/conference_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            ripple:rv_rippleDuration="200">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:textColor="@color/white"
+                android:text="タイムテーブルから見つける"/>
+
+        </com.andexert.library.RippleView>
+
+        <com.andexert.library.RippleView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_color"
+            android:id="@+id/search_conference_ripple"
+            android:layout_below="@+id/search_time_table_ripple"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="32dp"
+            ripple:rv_rippleDuration="200">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:textColor="@color/white"
+                android:text="カンファレンス一覧から見つける"/>
+
+        </com.andexert.library.RippleView>
+
+    </RelativeLayout>
 
 </RelativeLayout>
