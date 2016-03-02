@@ -2,6 +2,7 @@ package jp.android_group.student.abc2016winter.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.gordonwong.materialsheetfab.DimOverlayFrameLayout;
@@ -42,10 +44,8 @@ public class ConferenceDetailActivity extends AppCompatActivity {
     TextView mCategory;
     @Bind(R.id.abst)
     TextView mAbst;
-    @Bind(R.id.name)
-    TextView mName;
-    @Bind(R.id.profile)
-    TextView mProfile;
+    @Bind(R.id.speaker_cell)
+    LinearLayout mSpeakerCell;
     @Bind(R.id.overlay)
     DimOverlayFrameLayout mOverlay;
     @Bind(R.id.map_view)
@@ -115,47 +115,46 @@ public class ConferenceDetailActivity extends AppCompatActivity {
         mTitle.setText(mConference.getTitle());
         mTime.setText(mConference.getStartTime().substring(11, 16) + " - " + mConference.getEndTime().substring(11, 16));
         switch (mConference.getRoom_id()) {
-            case "1":
+            case 1:
                 mRoom.setText(R.string.room_1);
                 break;
-            case "2":
+            case 2:
                 mRoom.setText(R.string.room_2);
                 break;
-            case "3":
+            case 3:
                 mRoom.setText(R.string.room_3);
                 break;
-            case "4":
+            case 4:
                 mRoom.setText(R.string.room_4);
                 break;
-            case "5":
+            case 5:
                 mRoom.setText(R.string.room_5);
                 break;
-            case "6":
+            case 6:
                 mRoom.setText(R.string.room_6);
                 break;
-            case "7":
+            case 7:
                 mRoom.setText(R.string.room_7);
                 break;
-            case "8":
+            case 8:
                 mRoom.setText(R.string.room_8);
-                break;
-            case "9":
-                mRoom.setText(R.string.room_9);
-                break;
-            case "10":
-                mRoom.setText(R.string.room_10);
-                break;
-            case "11":
-                mRoom.setText(R.string.room_11);
-                break;
-            case "12":
-                mRoom.setText(R.string.room_12);
                 break;
         }
         mCategory.setText(mConference.getCategory());
         mAbst.setText(mConference.getAbst());
-        mName.setText(mConference.getSpeaker().getName());
-        mProfile.setText(mConference.getSpeaker().getProfile());
+
+        for (int i = 0; i < mConference.getSpeaker().getName().size(); i++) {
+            TextView name = new TextView(this);
+            name.setText(mConference.getSpeaker().getName().get(i));
+            name.setTextSize(16);
+            name.setTypeface(Typeface.DEFAULT_BOLD);
+            name.setPadding(0, 16, 0, 0);
+            mSpeakerCell.addView(name);
+            TextView profile = new TextView(this);
+            profile.setText(mConference.getSpeaker().getProfile().get(i));
+            profile.setPadding(0, 4, 0, 16);
+            mSpeakerCell.addView(profile);
+        }
 
         mBtnFavorite.setBackgroundResource(FavoriteAction.isFavoriteConference(this, mConference.getId()) ?
                 R.drawable.ic_star_yellow_600_36dp : R.drawable.ic_star_border_grey_600_36dp);

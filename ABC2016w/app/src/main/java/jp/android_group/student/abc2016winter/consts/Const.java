@@ -18,7 +18,7 @@ import jp.android_group.student.abc2016winter.R;
  */
 public class Const {
 
-    private static final String BASE_URL = "http://abc.android-group.jp/2014w/api/";
+    private static final String BASE_URL = "http://abc.android-group.jp/2016s/api/";
 
     public static final String URL_BAZZAAR = BASE_URL + "bazaar/";
     public static final String URL_CONFERENCE = BASE_URL + "conference/";

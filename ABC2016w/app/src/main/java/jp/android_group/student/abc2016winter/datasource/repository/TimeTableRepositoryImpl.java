@@ -82,9 +82,9 @@ public class TimeTableRepositoryImpl implements TimeTableRepository {
                     } else if (tagName.equals(Conference.TAG_ABSTRACT)) {
                         conference.setAbst(mParser.nextText());
                     } else if (tagName.equals(Conference.TAG_LEC_ORDER_NUM)) {
-                        conference.setLec_order_num(mParser.nextText());
+                        conference.setLec_order_num(Integer.parseInt(mParser.nextText()));
                     } else if (tagName.equals(Conference.TAG_ROOM_ORDER_NUM)) {
-                        conference.setRoom_order_num(mParser.nextText());
+                        conference.setRoom_order_num(Integer.parseInt(mParser.nextText()));
                     } else if (tagName.equals(Conference.TAG_URL)) {
                         conference.setUrl(mParser.nextText());
                     } else if (tagName.equals(Speaker.TAG_SPEAKER_ID)) {
@@ -93,24 +93,20 @@ public class TimeTableRepositoryImpl implements TimeTableRepository {
                         speaker.setName(mParser.nextText());
                     } else if (tagName.equals(Speaker.TAG_PROFILE)) {
                         speaker.setProfile(mParser.nextText());
-                        conference.setSpeaker(speaker);
                     } else if (tagName.equals(Conference.TAG_START_TIME)) {
                         conference.setStartTime(mParser.nextText());
                     } else if (tagName.equals(Conference.TAG_END_TIME)) {
                         conference.setEndTime(mParser.nextText());
                     } else if (tagName.equals(Conference.TAG_ROOM)) {
-                        conference.setRoom_id(mParser.getAttributeValue(null, "id"));
+                        conference.setRoom_id(Integer.parseInt(mParser.getAttributeValue(null, "id")));
                         conference.setRoom(mParser.nextText());
                     } else if (tagName.equals(Conference.TAG_CATEGORY)) {
-                        conference.setCategory_id(mParser.getAttributeValue(null, "id"));
+                        conference.setCategory_id(Integer.parseInt(mParser.getAttributeValue(null, "id")));
                         conference.setCategory(mParser.nextText());
                     } else if (tagName.equals(Conference.TAG_TIME_FRAME)) {
-                        conference.setTime_frame(mParser.nextText());
-                        if (Integer.parseInt(conference.getTime_frame()) != 17) {
-                            sparseList.get(Integer.parseInt(conference.getTime_frame())).add(conference);
-                        } else {
-                            sparseList.get(16).add(conference);
-                        }
+                        conference.setTime_frame(Integer.parseInt(mParser.nextText()));
+                        conference.setSpeaker(speaker);
+                        sparseList.get(conference.getTime_frame()).add(conference);
                     } else {
                         mParser.next();
                     }

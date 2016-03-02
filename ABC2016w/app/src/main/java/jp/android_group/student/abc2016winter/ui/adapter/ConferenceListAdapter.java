@@ -80,12 +80,6 @@ public class ConferenceListAdapter extends RecyclerView.Adapter<Const.Conference
             case 9:
                 holder.mCategory.setText(mContext.getString(R.string.category_9));
                 break;
-            case 10:
-                holder.mCategory.setText(mContext.getString(R.string.category_10));
-                break;
-            case 11:
-                holder.mCategory.setText(mContext.getString(R.string.category_11));
-                break;
         }
 
         holder.mCellRipple.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {

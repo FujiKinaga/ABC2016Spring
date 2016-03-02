@@ -22,7 +22,8 @@ public class Conference implements Parcelable {
             TAG_CATEGORY = "category",
             TAG_TIME_FRAME = "time_frame";
 
-    private String id, title, abst, url, startTime, endTime, room, category, lec_order_num, room_order_num, room_id, category_id, time_frame;
+    private int lec_order_num, room_order_num, room_id, category_id, time_frame;
+    private String id, title, abst, url, startTime, endTime, room, category;
     private Speaker speaker;
 
     public Conference() {
@@ -37,11 +38,11 @@ public class Conference implements Parcelable {
         endTime = in.readString();
         room = in.readString();
         category = in.readString();
-        lec_order_num = in.readString();
-        room_order_num = in.readString();
-        room_id = in.readString();
-        category_id = in.readString();
-        time_frame = in.readString();
+        lec_order_num = in.readInt();
+        room_order_num = in.readInt();
+        room_id = in.readInt();
+        category_id = in.readInt();
+        time_frame = in.readInt();
         speaker = in.readParcelable(Speaker.class.getClassLoader());
     }
 
@@ -98,43 +99,43 @@ public class Conference implements Parcelable {
         this.endTime = endTime;
     }
 
-    public String getLec_order_num() {
+    public int getLec_order_num() {
         return lec_order_num;
     }
 
-    public void setLec_order_num(String lec_order_num) {
+    public void setLec_order_num(int lec_order_num) {
         this.lec_order_num = lec_order_num;
     }
 
-    public String getRoom_order_num() {
+    public int getRoom_order_num() {
         return room_order_num;
     }
 
-    public void setRoom_order_num(String room_order_num) {
+    public void setRoom_order_num(int room_order_num) {
         this.room_order_num = room_order_num;
     }
 
-    public String getRoom_id() {
+    public int getRoom_id() {
         return room_id;
     }
 
-    public void setRoom_id(String room_id) {
+    public void setRoom_id(int room_id) {
         this.room_id = room_id;
     }
 
-    public String getCategory_id() {
+    public int getCategory_id() {
         return category_id;
     }
 
-    public void setCategory_id(String category_id) {
+    public void setCategory_id(int category_id) {
         this.category_id = category_id;
     }
 
-    public String getTime_frame() {
+    public int getTime_frame() {
         return time_frame;
     }
 
-    public void setTime_frame(String time_frame) {
+    public void setTime_frame(int time_frame) {
         this.time_frame = time_frame;
     }
 
@@ -185,11 +186,11 @@ public class Conference implements Parcelable {
         dest.writeString(endTime);
         dest.writeString(room);
         dest.writeString(category);
-        dest.writeString(lec_order_num);
-        dest.writeString(room_order_num);
-        dest.writeString(room_id);
-        dest.writeString(category_id);
-        dest.writeString(time_frame);
+        dest.writeInt(lec_order_num);
+        dest.writeInt(room_order_num);
+        dest.writeInt(room_id);
+        dest.writeInt(category_id);
+        dest.writeInt(time_frame);
         dest.writeParcelable(speaker, flags);
     }
 }

@@ -57,7 +57,12 @@ public class TimeTableListAdapter extends RecyclerView.Adapter<Const.TimeTableVi
 
         holder.mTime.setText(conference.getStartTime().substring(11, 16) + " - " + conference.getEndTime().substring(11, 16));
         holder.mTitle.setText(conference.getTitle());
-        holder.mSpeaker.setText(conference.getSpeaker().getName());
+
+        StringBuilder speakerNames = new StringBuilder(conference.getSpeaker().getName().get(0));
+        for (int i = 1; i < conference.getSpeaker().getName().size(); i++) {
+            speakerNames.append(" / ").append(conference.getSpeaker().getName().get(i));
+        }
+        holder.mSpeaker.setText(speakerNames.toString());
 
         holder.mFavoriteButton.setBackgroundResource(FavoriteAction.isFavoriteConference(mContext, conference.getId()) ?
                 R.drawable.ic_star_yellow_600_36dp : R.drawable.ic_star_border_grey_600_36dp);

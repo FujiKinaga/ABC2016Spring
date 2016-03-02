@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ABC2016Winter</string>
+    <string name="app_name">ABC2016Spring</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
@@ -64,30 +64,24 @@
     <string name="time_15">12/21 16:15〜</string>
     <string name="time_16">12/21 17:10〜</string>
 
-    <string name="category_1">基調・特別・招待講演</string>
-    <string name="category_2">開発</string>
-    <string name="category_3">LT／コミュニティー</string>
-    <string name="category_4">コンテンツ／ビジネス</string>
-    <string name="category_5">メーカー／サービス</string>
-    <string name="category_6">デザイン/コミュニティー</string>
-    <string name="category_7">次世代Android</string>
-    <string name="category_8">特別企画１</string>
-    <string name="category_9">特別企画２</string>
-    <string name="category_10">特別企画３</string>
-    <string name="category_11">特別企画４</string>
+    <string name="category_1">基調・特別講演</string>
+    <string name="category_2">Next tech strategies</string>
+    <string name="category_3">コミュニティトラック</string>
+    <string name="category_4">ネットワークトラック</string>
+    <string name="category_5">デザイン・デバイストラック</string>
+    <string name="category_6">アカデミックトラック 学生部企画</string>
+    <string name="category_7">ビギナーハンズオン企画</string>
+    <string name="category_8">バザール</string>
+    <string name="category_9">LT大会</string>
 
-    <string name="room_1">大講義室(2B101)</string>
-    <string name="room_2">4101教室</string>
-    <string name="room_3">4103教室</string>
-    <string name="room_4">4104教室</string>
-    <string name="room_5">4105教室</string>
-    <string name="room_6">4201教室</string>
-    <string name="room_7">4202教室</string>
-    <string name="room_8">4203教室</string>
-    <string name="room_9">4204教室</string>
-    <string name="room_10">4205教室</string>
-    <string name="room_11">4206教室</string>
-    <string name="room_12">食堂(コメドール)</string>
+    <string name="room_1">本多記念国際会議場</string>
+    <string name="room_2">本多記念国際会議場</string>
+    <string name="room_3">4階 17406</string>
+    <string name="room_4">4階 17410</string>
+    <string name="room_5">4階 17407</string>
+    <string name="room_6">6階 17606</string>
+    <string name="room_7">6階 17609</string>
+    <string name="room_8">バザール会場</string>
 
     <string name="roomstatus_0">未開催</string>
     <string name="roomstatus_1">空有り</string>

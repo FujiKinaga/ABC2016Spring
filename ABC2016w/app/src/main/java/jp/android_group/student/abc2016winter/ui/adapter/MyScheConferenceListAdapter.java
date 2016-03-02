@@ -55,43 +55,37 @@ public class MyScheConferenceListAdapter extends RecyclerView.Adapter<Const.MySc
 
         holder.mTime.setText(conference.getStartTime().substring(11, 16) + " - " + conference.getEndTime().substring(11, 16));
         holder.mTitle.setText(conference.getTitle());
-        holder.mSpeaker.setText(conference.getSpeaker().getName());
+
+        StringBuilder speakerNames = new StringBuilder(conference.getSpeaker().getName().get(0));
+        for (int i = 1; i < conference.getSpeaker().getName().size(); i++) {
+            speakerNames.append(" / ").append(conference.getSpeaker().getName().get(i));
+        }
+        holder.mSpeaker.setText(speakerNames.toString());
+
         switch (conference.getRoom_id()) {
-            case "1":
+            case 1:
                 holder.mRoom.setText(R.string.room_1);
                 break;
-            case "2":
+            case 2:
                 holder.mRoom.setText(R.string.room_2);
                 break;
-            case "3":
+            case 3:
                 holder.mRoom.setText(R.string.room_3);
                 break;
-            case "4":
+            case 4:
                 holder.mRoom.setText(R.string.room_4);
                 break;
-            case "5":
+            case 5:
                 holder.mRoom.setText(R.string.room_5);
                 break;
-            case "6":
+            case 6:
                 holder.mRoom.setText(R.string.room_6);
                 break;
-            case "7":
+            case 7:
                 holder.mRoom.setText(R.string.room_7);
                 break;
-            case "8":
+            case 8:
                 holder.mRoom.setText(R.string.room_8);
-                break;
-            case "9":
-                holder.mRoom.setText(R.string.room_9);
-                break;
-            case "10":
-                holder.mRoom.setText(R.string.room_10);
-                break;
-            case "11":
-                holder.mRoom.setText(R.string.room_11);
-                break;
-            case "12":
-                holder.mRoom.setText(R.string.room_12);
                 break;
         }
 
