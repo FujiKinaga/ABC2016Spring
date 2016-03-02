@@ -4,7 +4,7 @@ import android.support.v4.util.SparseArrayCompat;
 
 import java.util.ArrayList;
 
-import jp.android_group.student.abc2016winter.datasource.repository.ConferenceRepository;
+import jp.android_group.student.abc2016winter.domain.repository.ConferenceRepository;
 import jp.android_group.student.abc2016winter.domain.executor.PostExecutionThread;
 import jp.android_group.student.abc2016winter.domain.model.Conference;
 

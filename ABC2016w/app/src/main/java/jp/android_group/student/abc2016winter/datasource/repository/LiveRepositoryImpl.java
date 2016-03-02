@@ -15,6 +15,7 @@ import java.util.List;
 import cz.msebera.android.httpclient.Header;
 import jp.android_group.student.abc2016winter.consts.Const;
 import jp.android_group.student.abc2016winter.domain.model.Live;
+import jp.android_group.student.abc2016winter.domain.repository.LiveRepository;
 
 /**
  * Created by kinagafuji on 16/02/23.

@@ -2,7 +2,7 @@ package jp.android_group.student.abc2016winter.domain.usecase;
 
 import java.util.List;
 
-import jp.android_group.student.abc2016winter.datasource.repository.BazaarRepository;
+import jp.android_group.student.abc2016winter.domain.repository.BazaarRepository;
 import jp.android_group.student.abc2016winter.domain.executor.PostExecutionThread;
 import jp.android_group.student.abc2016winter.domain.model.Bazaar;
 

@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import jp.android_group.student.abc2016winter.R;
-import jp.android_group.student.abc2016winter.datasource.repository.ConferenceRepository;
+import jp.android_group.student.abc2016winter.domain.repository.ConferenceRepository;
 import jp.android_group.student.abc2016winter.datasource.repository.ConferenceRepositoryImpl;
 import jp.android_group.student.abc2016winter.domain.executor.UIThread;
 import jp.android_group.student.abc2016winter.domain.model.Conference;

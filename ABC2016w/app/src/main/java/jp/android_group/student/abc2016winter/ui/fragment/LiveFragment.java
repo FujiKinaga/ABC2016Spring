@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import jp.android_group.student.abc2016winter.R;
-import jp.android_group.student.abc2016winter.datasource.repository.LiveRepository;
+import jp.android_group.student.abc2016winter.domain.repository.LiveRepository;
 import jp.android_group.student.abc2016winter.datasource.repository.LiveRepositoryImpl;
 import jp.android_group.student.abc2016winter.domain.executor.UIThread;
 import jp.android_group.student.abc2016winter.domain.model.Live;

@@ -21,7 +21,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import jp.android_group.student.abc2016winter.R;
-import jp.android_group.student.abc2016winter.datasource.repository.MyScheBazaarRepository;
+import jp.android_group.student.abc2016winter.domain.repository.MyScheBazaarRepository;
 import jp.android_group.student.abc2016winter.datasource.repository.MyScheBazaarRepositoryImpl;
 import jp.android_group.student.abc2016winter.domain.executor.UIThread;
 import jp.android_group.student.abc2016winter.domain.model.Bazaar;

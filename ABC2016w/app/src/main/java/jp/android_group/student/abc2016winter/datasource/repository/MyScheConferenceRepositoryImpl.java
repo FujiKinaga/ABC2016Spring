@@ -19,6 +19,7 @@ import jp.android_group.student.abc2016winter.datasource.api.FavoriteAction;
 import jp.android_group.student.abc2016winter.datasource.memory.XmlCache;
 import jp.android_group.student.abc2016winter.domain.model.Conference;
 import jp.android_group.student.abc2016winter.domain.model.Speaker;
+import jp.android_group.student.abc2016winter.domain.repository.MyScheConferenceRepository;
 
 /**
  * Created by kinagafuji on 16/02/29.

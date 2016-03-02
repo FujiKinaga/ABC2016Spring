@@ -18,6 +18,7 @@ import jp.android_group.student.abc2016winter.consts.Const;
 import jp.android_group.student.abc2016winter.datasource.api.FavoriteAction;
 import jp.android_group.student.abc2016winter.datasource.memory.XmlCache;
 import jp.android_group.student.abc2016winter.domain.model.Bazaar;
+import jp.android_group.student.abc2016winter.domain.repository.MyScheBazaarRepository;
 
 /**
  * Created by kinagafuji on 16/02/29.

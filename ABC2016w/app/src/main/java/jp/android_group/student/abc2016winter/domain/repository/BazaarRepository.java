@@ -1,4 +1,4 @@
-package jp.android_group.student.abc2016winter.datasource.repository;
+package jp.android_group.student.abc2016winter.domain.repository;
 
 import java.util.List;
 
