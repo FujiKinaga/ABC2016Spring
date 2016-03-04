@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="jp.android_group.student.abc2016spring">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="jp.android_group.student.abc2016spring.App"
+        android:allowBackup="true"
+        android:icon="@drawable/abc2015s_icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="jp.android_group.student.abc2016spring.ui.activity.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="jp.android_group.student.abc2016spring.ui.activity.ConferenceDetailActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name="jp.android_group.student.abc2016spring.ui.activity.ConferenceListDetailActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name="jp.android_group.student.abc2016spring.ui.activity.BazaarDetailActivity"
+            android:screenOrientation="portrait"
+             />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="49e96e5c483c3d53249639b65b786d8358cc4300" />
+    </application>
+
+</manifest>
