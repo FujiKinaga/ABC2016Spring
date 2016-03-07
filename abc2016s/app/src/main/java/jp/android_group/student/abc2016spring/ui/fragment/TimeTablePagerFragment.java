@@ -69,6 +69,10 @@ public class TimeTablePagerFragment extends Fragment implements ShowTimeTablePre
 
         mFab = (Fab) getActivity().findViewById(R.id.fab);
 
+        if (!mFab.isShown()) {
+            mFab.show();
+        }
+
         mTimeTablePresenter.getTimeTableData();
 
         return rootView;

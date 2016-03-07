@@ -12,6 +12,7 @@ import android.webkit.WebViewClient;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import jp.android_group.student.abc2016spring.R;
+import jp.android_group.student.abc2016spring.ui.view.Fab;
 
 
 /**
@@ -22,7 +23,9 @@ public class OfficialFragment extends Fragment {
     @Bind(R.id.web_view)
     WebView mWebView;
 
-    private static final String URL_HP = "http://abc.android-group.jp/2014w/";
+    private Fab mFab;
+
+    private static final String URL_HP = "http://abc.android-group.jp/2016s/";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,6 +33,12 @@ public class OfficialFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_official, container, false);
         ButterKnife.bind(this, rootView);
+
+        mFab = (Fab) getActivity().findViewById(R.id.fab);
+
+        if (mFab.isShown()) {
+            mFab.hide();
+        }
 
         mWebView = (WebView) rootView.findViewById(R.id.web_view);
         mWebView.setWebViewClient(new WebViewClient());

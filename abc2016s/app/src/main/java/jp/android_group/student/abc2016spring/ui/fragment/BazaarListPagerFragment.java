@@ -70,6 +70,9 @@ public class BazaarListPagerFragment extends Fragment implements ShowBazaarPrese
         mMapConference = (LinearLayout) getActivity().findViewById(R.id.map_conference);
         mMapBazaar = (ImageView) getActivity().findViewById(R.id.map_bazaar);
 
+        if (!mFab.isShown()) {
+            mFab.show();
+        }
         mMapConference.setVisibility(View.GONE);
         mMapBazaar.setVisibility(View.VISIBLE);
 

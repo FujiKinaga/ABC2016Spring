@@ -14,11 +14,14 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import jp.android_group.student.abc2016spring.R;
+import jp.android_group.student.abc2016spring.ui.view.Fab;
 
 public class AboutFragment extends Fragment {
 
     @Bind(R.id.join)
     TextView mJoin;
+
+    private Fab mFab;
 
     public AboutFragment() {
     }
@@ -29,6 +32,11 @@ public class AboutFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_about, container, false);
         ButterKnife.bind(this, rootView);
+
+        mFab = (Fab) getActivity().findViewById(R.id.fab);
+        if (mFab.isShown()) {
+            mFab.hide();
+        }
 
         MovementMethod movementMethod = LinkMovementMethod.getInstance();
         mJoin.setMovementMethod(movementMethod);
