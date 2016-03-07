@@ -23,16 +23,14 @@
         </activity>
         <activity
             android:name="jp.android_group.student.abc2016spring.ui.activity.ConferenceDetailActivity"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name="jp.android_group.student.abc2016spring.ui.activity.ConferenceListDetailActivity"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name="jp.android_group.student.abc2016spring.ui.activity.BazaarDetailActivity"
-            android:screenOrientation="portrait"
-             />
+            android:screenOrientation="portrait" />
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="49e96e5c483c3d53249639b65b786d8358cc4300" />

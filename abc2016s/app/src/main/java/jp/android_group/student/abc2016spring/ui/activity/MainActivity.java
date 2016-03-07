@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.gordonwong.materialsheetfab.DimOverlayFrameLayout;
 import com.gordonwong.materialsheetfab.MaterialSheetFab;
@@ -42,12 +43,20 @@ public class MainActivity extends AppCompatActivity {
     Fab mFab;
     @Bind(R.id.overlay)
     DimOverlayFrameLayout mOverlay;
-    @Bind(R.id.map_view)
-    ImageView mMapView;
+    @Bind(R.id.map_bazaar)
+    ImageView mMapBazaar;
+    @Bind(R.id.map_4f)
+    ImageView mMap4F;
+    @Bind(R.id.map_6f)
+    ImageView mMap6F;
     @Bind(R.id.sheet)
     CardView mSheet;
+    @Bind(R.id.map_conference)
+    LinearLayout mMapConference;
 
-    private PhotoViewAttacher mAttacher;
+    private PhotoViewAttacher mAttacherBazaar;
+    private PhotoViewAttacher mAttacher4f;
+    private PhotoViewAttacher mAttacher6f;
 
     private Drawer result;
 
@@ -62,10 +71,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        Drawable bitmap = getResources().getDrawable(R.drawable.ic_map);
-        mMapView.setImageDrawable(bitmap);
+        mMapBazaar.setVisibility(View.GONE);
+        mMapConference.setVisibility(View.VISIBLE);
 
-        mAttacher = new PhotoViewAttacher(mMapView);
+        Drawable bitmap = getResources().getDrawable(R.drawable.ic_map_bazaar);
+        Drawable bitmap_4f = getResources().getDrawable(R.drawable.ic_map_time_table_4f);
+        Drawable bitmap_6f = getResources().getDrawable(R.drawable.ic_map_time_table_6f);
+        mMapBazaar.setImageDrawable(bitmap);
+        mMap4F.setImageDrawable(bitmap_4f);
+        mMap6F.setImageDrawable(bitmap_6f);
+
+        mAttacherBazaar = new PhotoViewAttacher(mMapBazaar);
+        mAttacher4f = new PhotoViewAttacher(mMap4F);
+        mAttacher6f = new PhotoViewAttacher(mMap6F);
 
         mToolBar.setTitle(getString(R.string.title_time_table));
         setSupportActionBar(mToolBar);
@@ -195,7 +213,9 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
 
         // Need to call clean-up
-        mAttacher.cleanup();
+        mAttacherBazaar.cleanup();
+        mAttacher4f.cleanup();
+        mAttacher6f.cleanup();
     }
 
     public void setStarLayout() {

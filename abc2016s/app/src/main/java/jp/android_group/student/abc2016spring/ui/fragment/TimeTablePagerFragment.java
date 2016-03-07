@@ -19,10 +19,10 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import jp.android_group.student.abc2016spring.R;
-import jp.android_group.student.abc2016spring.domain.repository.TimeTableRepository;
 import jp.android_group.student.abc2016spring.datasource.repository.TimeTableRepositoryImpl;
 import jp.android_group.student.abc2016spring.domain.executor.UIThread;
 import jp.android_group.student.abc2016spring.domain.model.Conference;
+import jp.android_group.student.abc2016spring.domain.repository.TimeTableRepository;
 import jp.android_group.student.abc2016spring.domain.usecase.TimeTableUseCase;
 import jp.android_group.student.abc2016spring.domain.usecase.TimeTableUseCaseImpl;
 import jp.android_group.student.abc2016spring.presenter.ShowTimeTablePresenter;
@@ -82,8 +82,8 @@ public class TimeTablePagerFragment extends Fragment implements ShowTimeTablePre
 
     @Override
     public void onPause() {
-        super.onPause();
         mTimeTablePresenter.pause();
+        super.onPause();
     }
 
     @Override

@@ -3,7 +3,9 @@ package jp.android_group.student.abc2016spring;
 import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
+
 import com.crashlytics.android.Crashlytics;
+
 import io.fabric.sdk.android.Fabric;
 
 /**

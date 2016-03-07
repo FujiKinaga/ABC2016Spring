@@ -8,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
@@ -18,10 +20,10 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import jp.android_group.student.abc2016spring.R;
-import jp.android_group.student.abc2016spring.domain.repository.ConferenceRepository;
 import jp.android_group.student.abc2016spring.datasource.repository.ConferenceRepositoryImpl;
 import jp.android_group.student.abc2016spring.domain.executor.UIThread;
 import jp.android_group.student.abc2016spring.domain.model.Conference;
+import jp.android_group.student.abc2016spring.domain.repository.ConferenceRepository;
 import jp.android_group.student.abc2016spring.domain.usecase.ConferenceUseCase;
 import jp.android_group.student.abc2016spring.domain.usecase.ConferenceUseCaseImpl;
 import jp.android_group.student.abc2016spring.presenter.ShowConferencePresenter;
@@ -39,6 +41,8 @@ public class ConferenceListPagerFragment extends Fragment implements ShowConfere
     private ConferenceListAdapter mAdapter;
 
     private Fab mFab;
+    private LinearLayout mMapConference;
+    private ImageView mMapBazaar;
 
     private ShowConferencePresenter mConferencePresenter;
 
@@ -64,6 +68,11 @@ public class ConferenceListPagerFragment extends Fragment implements ShowConfere
         ButterKnife.bind(this, rootView);
 
         mFab = (Fab) getActivity().findViewById(R.id.fab);
+        mMapConference = (LinearLayout) getActivity().findViewById(R.id.map_conference);
+        mMapBazaar = (ImageView) getActivity().findViewById(R.id.map_bazaar);
+
+        mMapConference.setVisibility(View.VISIBLE);
+        mMapBazaar.setVisibility(View.GONE);
 
         mLinearLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLinearLayoutManager);

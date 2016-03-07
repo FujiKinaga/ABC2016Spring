@@ -2,9 +2,9 @@ package jp.android_group.student.abc2016spring.domain.usecase;
 
 import java.util.List;
 
-import jp.android_group.student.abc2016spring.domain.repository.MyScheConferenceRepository;
 import jp.android_group.student.abc2016spring.domain.executor.PostExecutionThread;
 import jp.android_group.student.abc2016spring.domain.model.Conference;
+import jp.android_group.student.abc2016spring.domain.repository.MyScheConferenceRepository;
 
 /**
  * Created by kinagafuji on 16/02/29.

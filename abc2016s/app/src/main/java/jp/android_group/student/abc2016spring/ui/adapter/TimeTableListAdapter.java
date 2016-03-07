@@ -55,6 +55,14 @@ public class TimeTableListAdapter extends RecyclerView.Adapter<Const.TimeTableVi
     public void onBindViewHolder(final Const.TimeTableViewHolder holder, final int position) {
         final Conference conference = mData.get(holder.getAdapterPosition());
 
+        if (holder.getAdapterPosition() != 0) {
+            if (conference.getId().equals(mData.get(holder.getAdapterPosition() - 1).getId())) {
+                holder.mFavoriteButton.setVisibility(View.INVISIBLE);
+            } else {
+                holder.mFavoriteButton.setVisibility(View.VISIBLE);
+            }
+        }
+
         holder.mTime.setText(conference.getStartTime().substring(11, 16) + " - " + conference.getEndTime().substring(11, 16));
         holder.mTitle.setText(conference.getTitle());
 

@@ -2,9 +2,9 @@ package jp.android_group.student.abc2016spring.domain.usecase;
 
 import java.util.List;
 
-import jp.android_group.student.abc2016spring.domain.repository.BazaarRepository;
 import jp.android_group.student.abc2016spring.domain.executor.PostExecutionThread;
 import jp.android_group.student.abc2016spring.domain.model.Bazaar;
+import jp.android_group.student.abc2016spring.domain.repository.BazaarRepository;
 
 /**
  * Created by kinagafuji on 16/02/23.

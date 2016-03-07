@@ -44,11 +44,11 @@
     <string name="time_now">開催中</string>
     <string name="time_next">開始前</string>
     <string name="time_1p">10:00 - 12:10</string>
-    <string name="time_2p">13:00 - 13:40</string>
-    <string name="time_3p">13:55 - 14:35</string>
-    <string name="time_4p">14:50 - 15:20</string>
-    <string name="time_5p">16:15 - 16:55</string>
-    <string name="time_6p">17:10 - 17:50</string>
+    <string name="time_2p">13:00 - 13:45</string>
+    <string name="time_3p">14:00 - 14:45</string>
+    <string name="time_4p">15:00 - 15:45</string>
+    <string name="time_5p">16:00 - 16:45</string>
+    <string name="time_6p">17:00 - 18:30</string>
 
     <string name="action_map">地図</string>
     <string name="open">Open</string>
@@ -66,10 +66,10 @@
 
     <string name="category_1">基調・特別講演</string>
     <string name="category_2">Next tech strategies</string>
-    <string name="category_3">コミュニティトラック</string>
-    <string name="category_4">ネットワークトラック</string>
-    <string name="category_5">デザイン・デバイストラック</string>
-    <string name="category_6">アカデミックトラック 学生部企画</string>
+    <string name="category_3">コミュニティ</string>
+    <string name="category_4">ネットワーク</string>
+    <string name="category_5">デザイン・デバイス</string>
+    <string name="category_6">アカデミック・セキュリティ</string>
     <string name="category_7">ビギナーハンズオン企画</string>
     <string name="category_8">バザール</string>
     <string name="category_9">LT大会</string>

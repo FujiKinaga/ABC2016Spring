@@ -56,35 +56,7 @@ public class MyScheBazaarListAdapter extends RecyclerView.Adapter<Const.MyScheBa
         holder.mTitle.setText(bazaar.getTitle());
         holder.mGroup.setText(bazaar.getGroup());
         holder.mLocation.setText(bazaar.getLocation());
-        switch (bazaar.getLocation().substring(0, 1)) {
-            case "A":
-                holder.mLocation.setBackgroundResource(R.drawable.background_bazaar_a);
-                break;
-            case "B":
-                holder.mLocation.setBackgroundResource(R.drawable.background_bazaar_b);
-                break;
-            case "C":
-                holder.mLocation.setBackgroundResource(R.drawable.background_bazaar_c);
-                break;
-            case "D":
-                holder.mLocation.setBackgroundResource(R.drawable.background_bazaar_d);
-                break;
-            case "E":
-                holder.mLocation.setBackgroundResource(R.drawable.background_bazaar_e);
-                break;
-            case "F":
-                holder.mLocation.setBackgroundResource(R.drawable.background_bazaar_f);
-                break;
-            case "G":
-                holder.mLocation.setBackgroundResource(R.drawable.background_bazaar_g);
-                break;
-            case "H":
-                holder.mLocation.setBackgroundResource(R.drawable.background_bazaar_h);
-                break;
-            case "I":
-                holder.mLocation.setBackgroundResource(R.drawable.background_bazaar_i);
-                break;
-        }
+        holder.mLocation.setBackgroundResource(R.drawable.background_bazaar);
 
         holder.mCellRipple.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override

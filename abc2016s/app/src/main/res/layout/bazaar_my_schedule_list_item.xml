@@ -21,9 +21,9 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:text="A1"
-                android:textColor="@color/white"
+                android:textStyle="bold"
                 android:gravity="center"
-                android:background="@drawable/background_bazaar_a"
+                android:background="@drawable/background_bazaar"
                 android:layout_marginLeft="16dp"
                 android:layout_centerVertical="true"
                 android:id="@+id/location" />

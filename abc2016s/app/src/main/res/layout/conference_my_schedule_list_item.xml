@@ -30,7 +30,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TIME"
-                    android:textColor="@color/blue"
+                    android:textColor="@color/selected"
                     android:textSize="12sp" />
 
                 <TextView

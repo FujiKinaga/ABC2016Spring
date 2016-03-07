@@ -88,7 +88,8 @@
                         android:textSize="16sp"
                         android:layout_marginRight="8dp"
                         android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true" />
+                        android:layout_alignParentRight="true"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 

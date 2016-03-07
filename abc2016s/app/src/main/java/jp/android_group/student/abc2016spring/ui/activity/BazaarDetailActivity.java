@@ -76,7 +76,7 @@ public class BazaarDetailActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(getString(R.string.title_bazaar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Drawable bitmap = getResources().getDrawable(R.drawable.ic_map);
+        Drawable bitmap = getResources().getDrawable(R.drawable.ic_map_bazaar);
         mMapView.setImageDrawable(bitmap);
 
         mAttacher = new PhotoViewAttacher(mMapView);

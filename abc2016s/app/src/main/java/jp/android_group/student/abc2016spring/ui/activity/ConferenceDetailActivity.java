@@ -48,14 +48,17 @@ public class ConferenceDetailActivity extends AppCompatActivity {
     LinearLayout mSpeakerCell;
     @Bind(R.id.overlay)
     DimOverlayFrameLayout mOverlay;
-    @Bind(R.id.map_view)
-    ImageView mMapView;
+    @Bind(R.id.map_4f)
+    ImageView mMap4f;
+    @Bind(R.id.map_6f)
+    ImageView mMap6f;
     @Bind(R.id.sheet)
     CardView mSheet;
     @Bind(R.id.fab)
     Fab mFab;
 
-    private PhotoViewAttacher mAttacher;
+    private PhotoViewAttacher mAttacher4f;
+    private PhotoViewAttacher mAttacher6f;
 
     private MaterialSheetFab materialSheetFab;
 
@@ -82,10 +85,13 @@ public class ConferenceDetailActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(getString(R.string.title_conference));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Drawable bitmap = getResources().getDrawable(R.drawable.ic_map);
-        mMapView.setImageDrawable(bitmap);
+        Drawable bitmap_4f = getResources().getDrawable(R.drawable.ic_map_time_table_4f);
+        Drawable bitmap_6f = getResources().getDrawable(R.drawable.ic_map_time_table_6f);
+        mMap4f.setImageDrawable(bitmap_4f);
+        mMap6f.setImageDrawable(bitmap_6f);
 
-        mAttacher = new PhotoViewAttacher(mMapView);
+        mAttacher4f = new PhotoViewAttacher(mMap4f);
+        mAttacher6f = new PhotoViewAttacher(mMap6f);
 
         int sheetColor = getResources().getColor(R.color.view_background);
         int fabColor = getResources().getColor(R.color.main_color);
@@ -140,7 +146,35 @@ public class ConferenceDetailActivity extends AppCompatActivity {
                 mRoom.setText(R.string.room_8);
                 break;
         }
-        mCategory.setText(mConference.getCategory());
+        switch (mConference.getCategory_id()) {
+            case 1:
+                mCategory.setText(R.string.category_1);
+                break;
+            case 2:
+                mCategory.setText(R.string.category_2);
+                break;
+            case 3:
+                mCategory.setText(R.string.category_3);
+                break;
+            case 4:
+                mCategory.setText(R.string.category_4);
+                break;
+            case 5:
+                mCategory.setText(R.string.category_5);
+                break;
+            case 6:
+                mCategory.setText(R.string.category_6);
+                break;
+            case 7:
+                mCategory.setText(R.string.category_7);
+                break;
+            case 8:
+                mCategory.setText(R.string.category_8);
+                break;
+            case 9:
+                mCategory.setText(R.string.category_9);
+                break;
+        }
         mAbst.setText(mConference.getAbst());
 
         for (int i = 0; i < mConference.getSpeaker().getName().size(); i++) {
@@ -201,7 +235,8 @@ public class ConferenceDetailActivity extends AppCompatActivity {
         super.onDestroy();
 
         // Need to call clean-up
-        mAttacher.cleanup();
+        mAttacher4f.cleanup();
+        mAttacher6f.cleanup();
         if (isChange) {
             BusHolder.get().post(new StarClickedEvent(mPosition));
         }

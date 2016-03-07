@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import jp.android_group.student.abc2016spring.R;
-import jp.android_group.student.abc2016spring.domain.repository.LiveRepository;
 import jp.android_group.student.abc2016spring.datasource.repository.LiveRepositoryImpl;
 import jp.android_group.student.abc2016spring.domain.executor.UIThread;
 import jp.android_group.student.abc2016spring.domain.model.Live;
+import jp.android_group.student.abc2016spring.domain.repository.LiveRepository;
 import jp.android_group.student.abc2016spring.domain.usecase.LiveUseCase;
 import jp.android_group.student.abc2016spring.domain.usecase.LiveUseCaseImpl;
 import jp.android_group.student.abc2016spring.presenter.ShowLivePresenter;

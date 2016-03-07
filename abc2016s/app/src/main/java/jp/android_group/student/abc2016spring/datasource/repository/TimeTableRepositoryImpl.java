@@ -106,6 +106,9 @@ public class TimeTableRepositoryImpl implements TimeTableRepository {
                         conference.setCategory(mParser.nextText());
                     } else if (tagName.equals(Conference.TAG_TIME_FRAME)) {
                         conference.setTime_frame(Integer.parseInt(mParser.nextText()));
+                        if (conference.getTime_frame() > 11) {
+                            conference.setTime_frame(conference.getTime_frame() - 1);
+                        }
                         conference.setSpeaker(speaker);
                         sparseList.get(conference.getTime_frame()).add(conference);
                     } else {

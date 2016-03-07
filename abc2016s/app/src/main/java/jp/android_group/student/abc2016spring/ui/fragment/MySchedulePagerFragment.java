@@ -7,6 +7,8 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
@@ -25,6 +27,8 @@ public class MySchedulePagerFragment extends Fragment {
     ViewPager mViewpager;
 
     private Fab mFab;
+    private LinearLayout mMapConference;
+    private ImageView mMapBazaar;
 
     private FragmentPagerItemAdapter adapter;
 
@@ -43,6 +47,11 @@ public class MySchedulePagerFragment extends Fragment {
         mShowPosition = 0;
 
         mFab = (Fab) getActivity().findViewById(R.id.fab);
+        mMapConference = (LinearLayout) getActivity().findViewById(R.id.map_conference);
+        mMapBazaar = (ImageView) getActivity().findViewById(R.id.map_bazaar);
+
+        mMapConference.setVisibility(View.VISIBLE);
+        mMapBazaar.setVisibility(View.GONE);
 
         adapter = new FragmentPagerItemAdapter(
                 getChildFragmentManager(), FragmentPagerItems.with(getActivity())
@@ -61,6 +70,13 @@ public class MySchedulePagerFragment extends Fragment {
             @Override
             public void onPageSelected(int position) {
                 mShowPosition = position;
+                if (mShowPosition == 0) {
+                    mMapConference.setVisibility(View.VISIBLE);
+                    mMapBazaar.setVisibility(View.GONE);
+                } else {
+                    mMapConference.setVisibility(View.GONE);
+                    mMapBazaar.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override
