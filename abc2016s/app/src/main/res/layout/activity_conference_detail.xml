@@ -139,16 +139,17 @@
 
         </android.support.v4.widget.NestedScrollView>
 
-    </android.support.design.widget.CoordinatorLayout>
+        <jp.android_group.student.abc2016spring.ui.view.Fab
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_place_white_24dp"
+            app:backgroundTint="@color/main_color"
+            app:layout_anchor="@+id/coordinator_layout"
+            android:layout_margin="16dp"
+            app:layout_anchorGravity="bottom|right"  />
 
-    <jp.android_group.student.abc2016spring.ui.view.Fab
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_place_white_24dp"
-        app:backgroundTint="@color/main_color"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true" />
+    </android.support.design.widget.CoordinatorLayout>
 
     <com.gordonwong.materialsheetfab.DimOverlayFrameLayout
         android:id="@+id/overlay"

@@ -18,13 +18,14 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import jp.android_group.student.abc2016spring.R;
 import jp.android_group.student.abc2016spring.ui.view.Fab;
+import jp.android_group.student.abc2016spring.ui.view.HackyViewPager;
 
 public class MySchedulePagerFragment extends Fragment {
 
     @Bind(R.id.smart_tab)
     SmartTabLayout mSmartTab;
     @Bind(R.id.viewpager)
-    ViewPager mViewpager;
+    HackyViewPager mViewpager;
 
     private Fab mFab;
     private LinearLayout mMapConference;

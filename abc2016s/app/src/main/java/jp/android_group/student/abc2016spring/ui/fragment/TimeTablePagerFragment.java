@@ -8,6 +8,8 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.Bundler;
@@ -27,15 +29,18 @@ import jp.android_group.student.abc2016spring.domain.usecase.TimeTableUseCase;
 import jp.android_group.student.abc2016spring.domain.usecase.TimeTableUseCaseImpl;
 import jp.android_group.student.abc2016spring.presenter.ShowTimeTablePresenter;
 import jp.android_group.student.abc2016spring.ui.view.Fab;
+import jp.android_group.student.abc2016spring.ui.view.HackyViewPager;
 
 public class TimeTablePagerFragment extends Fragment implements ShowTimeTablePresenter.ShowTimeTableView {
 
     @Bind(R.id.smart_tab)
     SmartTabLayout mSmartTab;
     @Bind(R.id.viewpager)
-    ViewPager mViewpager;
+    HackyViewPager mViewpager;
 
     private Fab mFab;
+    private LinearLayout mMapConference;
+    private ImageView mMapBazaar;
 
     private FragmentPagerItemAdapter adapter;
 
@@ -68,10 +73,14 @@ public class TimeTablePagerFragment extends Fragment implements ShowTimeTablePre
         mShowPosition = 0;
 
         mFab = (Fab) getActivity().findViewById(R.id.fab);
+        mMapConference = (LinearLayout) getActivity().findViewById(R.id.map_conference);
+        mMapBazaar = (ImageView) getActivity().findViewById(R.id.map_bazaar);
 
         if (!mFab.isShown()) {
             mFab.show();
         }
+        mMapConference.setVisibility(View.VISIBLE);
+        mMapBazaar.setVisibility(View.GONE);
 
         mTimeTablePresenter.getTimeTableData();
 

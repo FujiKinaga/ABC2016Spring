@@ -29,7 +29,7 @@
         app:stl_underlineColor="@color/main_color"
         app:stl_underlineThickness="0dp" />
 
-    <android.support.v4.view.ViewPager
+    <jp.android_group.student.abc2016spring.ui.view.HackyViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
