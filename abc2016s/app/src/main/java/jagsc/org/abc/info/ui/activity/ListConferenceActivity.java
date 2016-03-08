@@ -11,15 +11,12 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView;
-import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
-import com.github.ksoichiro.android.observablescrollview.ScrollState;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnTouch;
 import jagsc.org.abc.info.R;
 import jagsc.org.abc.info.Util;
 import jagsc.org.abc.info.domain.model.Conference;
