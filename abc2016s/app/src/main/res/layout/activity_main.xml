@@ -53,6 +53,28 @@
             android:layout_margin="16dp"
             app:layout_anchorGravity="bottom|right" />
 
+        <jagsc.org.abc.info.ui.view.Fab
+            android:id="@+id/nav_fab"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_navigation_white_24dp"
+            app:backgroundTint="@color/main_color"
+            app:layout_anchor="@+id/coordinator"
+            android:layout_margin="16dp"
+            app:layout_anchorGravity="bottom|right" />
+
+        <jagsc.org.abc.info.ui.view.Fab
+            android:id="@+id/review_fab"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_rate_review_white_24dp"
+            app:backgroundTint="@color/main_color"
+            app:layout_anchor="@+id/coordinator"
+            android:layout_margin="16dp"
+            app:layout_anchorGravity="bottom|right" />
+
     </android.support.design.widget.CoordinatorLayout>
 
     <com.gordonwong.materialsheetfab.DimOverlayFrameLayout
@@ -78,8 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <include
-                layout="@layout/sheet_map" />
+            <include layout="@layout/sheet_map" />
 
         </android.support.v7.widget.CardView>
 

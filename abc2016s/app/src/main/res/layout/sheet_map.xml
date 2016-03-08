@@ -12,13 +12,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="4dp"
         android:text="4F"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:id="@+id/map_4f"
-        />
+        android:id="@+id/map_4f" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -27,12 +26,11 @@
         android:text="6F"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="4dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:id="@+id/map_6f"
-        />
+        android:id="@+id/map_6f" />
 
 </LinearLayout>

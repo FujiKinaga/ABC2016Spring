@@ -1,5 +1,6 @@
 package jagsc.org.abc.info.consts;
 
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
@@ -11,6 +12,7 @@ import com.loopj.android.http.SyncHttpClient;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import jagsc.org.abc.info.App;
 import jagsc.org.abc.info.R;
 
 /**
@@ -23,6 +25,11 @@ public class Const {
     public static final String URL_BAZZAAR = BASE_URL + "bazaar/";
     public static final String URL_CONFERENCE = BASE_URL + "conference/";
     public static final String URL_LIVE = BASE_URL + "live/";
+
+    public static final String URL_HP = "http://abc.android-group.jp/2016s/";
+    public static final String URL_SOCIALGATHERING = "http://peatix.com/event/148200";
+    public static final Uri URL_REVIEW = Uri.parse("market://details?id=" + App.getInstance().getPackageName());
+    public static final Uri URI_NAVIGATION = Uri.parse("google.navigation:q=35.665158,139.713058&mode=w");
 
     public static final AsyncHttpClient sAsyncHttpClient = new AsyncHttpClient();
     public static final SyncHttpClient sSyncHttpClient = new SyncHttpClient();

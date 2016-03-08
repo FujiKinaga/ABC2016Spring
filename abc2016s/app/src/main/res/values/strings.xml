@@ -11,8 +11,8 @@
     <string name="title_session">セッション</string>
     <string name="title_live">ライブ</string>
     <string name="title_vote">投票ページ</string>
-    <string name="title_youtube">Youtubeライブ</string>
     <string name="title_official_site">公式サイト</string>
+    <string name="title_social_gathering">懇親会について</string>
     <string name="title_about">このアプリについて</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

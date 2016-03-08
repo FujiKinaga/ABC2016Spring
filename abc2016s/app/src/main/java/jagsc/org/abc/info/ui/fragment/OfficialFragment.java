@@ -12,6 +12,7 @@ import android.webkit.WebViewClient;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import jagsc.org.abc.info.R;
+import jagsc.org.abc.info.consts.Const;
 import jagsc.org.abc.info.ui.view.Fab;
 
 
@@ -24,8 +25,6 @@ public class OfficialFragment extends Fragment {
     WebView mWebView;
 
     private Fab mFab;
-
-    private static final String URL_HP = "http://abc.android-group.jp/2016s/";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,13 +39,12 @@ public class OfficialFragment extends Fragment {
             mFab.hide();
         }
 
-        mWebView = (WebView) rootView.findViewById(R.id.web_view);
         mWebView.setWebViewClient(new WebViewClient());
-        mWebView.loadUrl(URL_HP);
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.loadUrl(Const.URL_HP);
 
         return rootView;
     }
-
 
     @Override
     public void onDestroyView() {

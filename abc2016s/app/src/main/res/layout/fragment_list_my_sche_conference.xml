@@ -52,7 +52,7 @@
                 android:textSize="16sp"
                 android:padding="12dp"
                 android:textColor="@color/white"
-                android:text="タイムテーブルから見つける"/>
+                android:text="タイムテーブルから見つける" />
 
         </com.andexert.library.RippleView>
 
@@ -76,7 +76,7 @@
                 android:textSize="16sp"
                 android:padding="12dp"
                 android:textColor="@color/white"
-                android:text="カンファレンス一覧から見つける"/>
+                android:text="カンファレンス一覧から見つける" />
 
         </com.andexert.library.RippleView>
 

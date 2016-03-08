@@ -16,46 +16,46 @@
         android:visibility="gone"
         android:id="@+id/empty_view">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="お気に入りのバザールがまだありません"
-        android:id="@+id/noBazaarTitle"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bazaar_image"
-        android:layout_below="@+id/noBazaarTitle"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/icon_bazaar" />
-
-    <com.andexert.library.RippleView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/main_color"
-        android:id="@+id/search_bazaar_ripple"
-        android:layout_below="@+id/bazaar_image"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="32dp"
-        ripple:rv_rippleDuration="200">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:textSize="16sp"
-            android:padding="12dp"
-            android:textColor="@color/white"
-            android:text="バザール一覧から見つける"/>
+            android:text="お気に入りのバザールがまだありません"
+            android:id="@+id/noBazaarTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp" />
 
-    </com.andexert.library.RippleView>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bazaar_image"
+            android:layout_below="@+id/noBazaarTitle"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/icon_bazaar" />
+
+        <com.andexert.library.RippleView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_color"
+            android:id="@+id/search_bazaar_ripple"
+            android:layout_below="@+id/bazaar_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="32dp"
+            ripple:rv_rippleDuration="200">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:textColor="@color/white"
+                android:text="バザール一覧から見つける" />
+
+        </com.andexert.library.RippleView>
     </RelativeLayout>
 
 </RelativeLayout>

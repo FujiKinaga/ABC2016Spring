@@ -25,9 +25,10 @@ import jagsc.org.abc.info.Util;
 import jagsc.org.abc.info.ui.fragment.AboutFragment;
 import jagsc.org.abc.info.ui.fragment.ListBazaarFragment;
 import jagsc.org.abc.info.ui.fragment.ListConferenceFragment;
-import jagsc.org.abc.info.ui.fragment.PagerMyScheFragment;
 import jagsc.org.abc.info.ui.fragment.OfficialFragment;
+import jagsc.org.abc.info.ui.fragment.PagerMyScheFragment;
 import jagsc.org.abc.info.ui.fragment.PagerTimeTableFragment;
+import jagsc.org.abc.info.ui.fragment.SocialGatheringFragment;
 import jagsc.org.abc.info.ui.fragment.VoteFragment;
 import jagsc.org.abc.info.ui.view.Fab;
 import jagsc.org.abc.info.ui.view.StarLayout;
@@ -92,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
                 .withActivity(this)
                 .withToolbar(mToolBar)
                 .withHeader(R.layout.drawer_header)
-                .withFooter(R.layout.drawer_footer)
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName(getString(R.string.title_time_table)).withIdentifier(1),
                         new PrimaryDrawerItem().withName(getString(R.string.title_my_schedule)).withIdentifier(2),
@@ -100,7 +100,8 @@ public class MainActivity extends AppCompatActivity {
                         new PrimaryDrawerItem().withName(getString(R.string.title_bazaar)).withIdentifier(4),
                         new PrimaryDrawerItem().withName(getString(R.string.title_vote)).withIdentifier(5),
                         new PrimaryDrawerItem().withName(getString(R.string.title_official_site)).withIdentifier(6),
-                        new PrimaryDrawerItem().withName(getString(R.string.title_about)).withIdentifier(7)
+                        new PrimaryDrawerItem().withName(getString(R.string.title_social_gathering)).withIdentifier(7),
+                        new PrimaryDrawerItem().withName(getString(R.string.title_about)).withIdentifier(8)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -132,6 +133,10 @@ public class MainActivity extends AppCompatActivity {
                                 getSupportFragmentManager().beginTransaction().replace(R.id.container
                                         , new OfficialFragment()).commit();
                             } else if (drawerItem.getIdentifier() == 7) {
+                                mToolBar.setTitle(getString(R.string.title_social_gathering));
+                                getSupportFragmentManager().beginTransaction().replace(R.id.container
+                                        , new SocialGatheringFragment()).commit();
+                            } else if (drawerItem.getIdentifier() == 8) {
                                 mToolBar.setTitle(getString(R.string.title_about));
                                 getSupportFragmentManager().beginTransaction().replace(R.id.container
                                         , new AboutFragment()).commit();

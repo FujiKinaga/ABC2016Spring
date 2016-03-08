@@ -29,7 +29,7 @@ android {
         exclude 'LICENSE.txt'
     }
     defaultConfig {
-        applicationId 'jagsc.org.abc.infoapp'
+        applicationId 'jagsc.org.abc.info'
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
