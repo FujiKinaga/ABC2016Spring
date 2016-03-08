@@ -7,16 +7,16 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:+'
         classpath 'io.fabric.tools:gradle:1.+'
-        classpath 'com.google.gms:google-services:+'
+//        classpath 'com.google.gms:google-services:+'
     }
 }
 
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'
 
 def versionMajor = 1
-def versionMinor = 1
+def versionMinor = 0
 def versionPatch = 0
 
 android {
@@ -29,7 +29,7 @@ android {
         exclude 'LICENSE.txt'
     }
     defaultConfig {
-        applicationId 'jp.android_group.student.abc2016spring'
+        applicationId 'jagsc.org.abc.infoapp'
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
@@ -66,7 +66,6 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.commit451:PhotoView:1.2.4'
-    compile 'com.google.android.gms:play-services-analytics:8.3.0'
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.android.support:design:23.1.0'
     compile 'com.android.support:cardview-v7:23.1.0'

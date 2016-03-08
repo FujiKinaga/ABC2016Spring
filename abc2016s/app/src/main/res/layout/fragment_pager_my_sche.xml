@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.ogaclejapan.smarttablayout.SmartTabLayout
+        android:id="@+id/smart_tab"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/tool_bar"
+        android:background="@color/sub_color"
+        android:clipToPadding="false"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        app:stl_defaultTabTextAllCaps="true"
+        app:stl_defaultTabTextColor="@color/white"
+        app:stl_defaultTabTextHorizontalPadding="24dp"
+        app:stl_defaultTabTextMinWidth="0dp"
+        app:stl_defaultTabTextSize="14sp"
+        app:stl_distributeEvenly="true"
+        app:stl_dividerColor="@color/transparent"
+        app:stl_dividerThickness="0dp"
+        app:stl_indicatorAlwaysInCenter="false"
+        app:stl_indicatorColor="@color/selected"
+        app:stl_indicatorCornerRadius="0dp"
+        app:stl_indicatorInFront="false"
+        app:stl_indicatorInterpolation="linear"
+        app:stl_indicatorThickness="3dp"
+        app:stl_underlineColor="@color/main_color"
+        app:stl_underlineThickness="0dp" />
+
+    <jagsc.org.abc.info.ui.view.HackyViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/smart_tab" />
+
+</RelativeLayout>
