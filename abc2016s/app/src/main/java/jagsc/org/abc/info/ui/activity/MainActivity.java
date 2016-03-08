@@ -20,6 +20,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import jagsc.org.abc.info.R;
 import jagsc.org.abc.info.Util;
 import jagsc.org.abc.info.ui.fragment.AboutFragment;
@@ -54,6 +55,20 @@ public class MainActivity extends AppCompatActivity {
     CardView mSheet;
     @Bind(R.id.map_conference)
     LinearLayout mMapConference;
+
+    @OnClick(R.id.fab)
+    void fab() {
+        if (mFab.getVisibility() == View.VISIBLE) {
+            materialSheetFab.showSheet();
+        }
+    }
+
+    @OnClick(R.id.overlay)
+    void overlay() {
+        if (mFab.getVisibility() != View.VISIBLE) {
+            materialSheetFab.hideSheet();
+        }
+    }
 
     private PhotoViewAttacher mAttacherBazaar;
     private PhotoViewAttacher mAttacher4f;
@@ -165,24 +180,6 @@ public class MainActivity extends AppCompatActivity {
         int sheetColor = getResources().getColor(R.color.view_background);
         int fabColor = getResources().getColor(R.color.main_color);
         materialSheetFab = new MaterialSheetFab<>(mFab, mSheet, mOverlay, sheetColor, fabColor);
-
-        mFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mFab.getVisibility() == View.VISIBLE) {
-                    materialSheetFab.showSheet();
-                }
-            }
-        });
-
-        mOverlay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mFab.getVisibility() != View.VISIBLE) {
-                    materialSheetFab.hideSheet();
-                }
-            }
-        });
 
         mStarLayout.setOnTouchListener(new View.OnTouchListener() {
             @Override

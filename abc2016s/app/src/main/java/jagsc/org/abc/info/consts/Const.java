@@ -19,12 +19,17 @@ import jagsc.org.abc.info.R;
  * Created by kinagafuji on 16/02/22.
  */
 public class Const {
+    //定数を扱うクラス
+    //public staticでどのクラスからでも使用可能
+    //なのでここの値を変えれば他も自動で変わります。
 
     private static final String BASE_URL = "http://abc.android-group.jp/2016s/api/";
 
     public static final String URL_BAZZAAR = BASE_URL + "bazaar/";
     public static final String URL_CONFERENCE = BASE_URL + "conference/";
     public static final String URL_LIVE = BASE_URL + "live/";
+
+    public static final String URL_VOTE = "https://script.google.com/macros/s/AKfycbzCoMf77sBSPA3Hi7UStkf_373cHZzkOoWcK0_qB8UtHR-2U-E/exec";
 
     public static final String URL_HP = "http://abc.android-group.jp/2016s/";
     public static final String URL_SOCIALGATHERING = "http://peatix.com/event/148200";

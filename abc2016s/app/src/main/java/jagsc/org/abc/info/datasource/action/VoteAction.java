@@ -16,11 +16,9 @@ import jagsc.org.abc.info.consts.Const;
  */
 public class VoteAction {
 
-    private static final String VOTE_URL = "https://script.google.com/macros/s/AKfycbzCoMf77sBSPA3Hi7UStkf_373cHZzkOoWcK0_qB8UtHR-2U-E/exec";
-
     //主催用
     public static void voteStart(Context context) {
-        Const.sAsyncHttpClient.post(context, VOTE_URL, new RequestParams("action", "start"), new JsonHttpResponseHandler() {
+        Const.sAsyncHttpClient.post(context, Const.URL_VOTE, new RequestParams("action", "start"), new JsonHttpResponseHandler() {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -35,7 +33,7 @@ public class VoteAction {
     }
 
     public static void voteEnd(Context context) {
-        Const.sAsyncHttpClient.get(context, VOTE_URL, new RequestParams("action", "end"), new JsonHttpResponseHandler() {
+        Const.sAsyncHttpClient.get(context, Const.URL_VOTE, new RequestParams("action", "end"), new JsonHttpResponseHandler() {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -51,7 +49,7 @@ public class VoteAction {
 
     //参加者用
     public static void votePush(Context context) {
-        Const.sAsyncHttpClient.post(context, VOTE_URL, new RequestParams("action", "vote"), new JsonHttpResponseHandler() {
+        Const.sAsyncHttpClient.post(context, Const.URL_VOTE, new RequestParams("action", "vote"), new JsonHttpResponseHandler() {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {

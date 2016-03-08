@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
  */
 public class XmlCache {
 
+    //以前xmlデータをwebから取ってきて、キャッシュに保存・チェックをするためのクラス
+
     private static final String PREFERENCE_CACHE = "ABC2016W_Cache";
 
     public static void putConferenceResponse(Context context, String response) {

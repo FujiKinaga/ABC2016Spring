@@ -2,8 +2,6 @@
 <resources>
     <color name="main_color">#00b285</color>
     <color name="sub_color">#00b285</color>
-    <color name="disable_text_color">#9D9FA2</color>
-    <color name="unselected">#00b285</color>
     <color name="selected">#318bcb</color>
     <color name="white">#ffffff</color>
 

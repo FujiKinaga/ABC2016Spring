@@ -20,6 +20,7 @@ import com.gordonwong.materialsheetfab.MaterialSheetFab;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import jagsc.org.abc.info.R;
 import jagsc.org.abc.info.datasource.action.FavoriteAction;
 import jagsc.org.abc.info.domain.model.Conference;
@@ -56,6 +57,32 @@ public class DetailConferenceActivity extends AppCompatActivity {
     CardView mSheet;
     @Bind(R.id.fab)
     Fab mFab;
+
+    @OnClick(R.id.fab)
+    void fab() {
+        if (mFab.getVisibility() == View.VISIBLE) {
+            materialSheetFab.showSheet();
+        }
+    }
+
+    @OnClick(R.id.overlay)
+    void overlay() {
+        if (mFab.getVisibility() != View.VISIBLE) {
+            materialSheetFab.hideSheet();
+        }
+    }
+
+    @OnClick(R.id.btn_favorite)
+    void favorite() {
+        isChange = !isChange;
+        if (FavoriteAction.isFavoriteConference(DetailConferenceActivity.this, mConference.getTitle())) {
+            FavoriteAction.unFavoriteConference(DetailConferenceActivity.this, mConference.getTitle());
+            mBtnFavorite.setBackgroundResource(R.drawable.ic_star_border_grey_600_36dp);
+        } else {
+            FavoriteAction.favoriteConference(DetailConferenceActivity.this, mConference.getTitle());
+            mBtnFavorite.setBackgroundResource(R.drawable.ic_star_yellow_600_36dp);
+        }
+    }
 
     private PhotoViewAttacher mAttacher4f;
     private PhotoViewAttacher mAttacher6f;
@@ -96,24 +123,6 @@ public class DetailConferenceActivity extends AppCompatActivity {
         int sheetColor = getResources().getColor(R.color.view_background);
         int fabColor = getResources().getColor(R.color.main_color);
         materialSheetFab = new MaterialSheetFab<>(mFab, mSheet, mOverlay, sheetColor, fabColor);
-
-        mFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mFab.getVisibility() == View.VISIBLE) {
-                    materialSheetFab.showSheet();
-                }
-            }
-        });
-
-        mOverlay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mFab.getVisibility() != View.VISIBLE) {
-                    materialSheetFab.hideSheet();
-                }
-            }
-        });
 
         mConference = getIntent().getParcelableExtra("conference");
         mPosition = getIntent().getIntExtra("position", 0);
@@ -192,21 +201,6 @@ public class DetailConferenceActivity extends AppCompatActivity {
 
         mBtnFavorite.setBackgroundResource(FavoriteAction.isFavoriteConference(this, mConference.getTitle()) ?
                 R.drawable.ic_star_yellow_600_36dp : R.drawable.ic_star_border_grey_600_36dp);
-
-        mBtnFavorite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isChange = !isChange;
-                if (FavoriteAction.isFavoriteConference(DetailConferenceActivity.this, mConference.getTitle())) {
-                    FavoriteAction.unFavoriteConference(DetailConferenceActivity.this, mConference.getTitle());
-                    mBtnFavorite.setBackgroundResource(R.drawable.ic_star_border_grey_600_36dp);
-                } else {
-                    FavoriteAction.favoriteConference(DetailConferenceActivity.this, mConference.getTitle());
-                    mBtnFavorite.setBackgroundResource(R.drawable.ic_star_yellow_600_36dp);
-                    //mCallback.onFavoriteClick();
-                }
-            }
-        });
     }
 
     @Override

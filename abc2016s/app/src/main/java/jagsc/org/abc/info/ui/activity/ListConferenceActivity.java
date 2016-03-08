@@ -19,15 +19,14 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnTouch;
 import jagsc.org.abc.info.R;
 import jagsc.org.abc.info.Util;
 import jagsc.org.abc.info.domain.model.Conference;
 import jagsc.org.abc.info.ui.adapter.ListTimeTableAdapter;
 import jagsc.org.abc.info.ui.view.StarLayout;
 
-public class ListConferenceActivity extends AppCompatActivity implements ListTimeTableAdapter.TimeTableCallback, ObservableScrollViewCallbacks {
-
-    private List<Conference> mConferenceList = new ArrayList<>();
+public class ListConferenceActivity extends AppCompatActivity implements ListTimeTableAdapter.TimeTableCallback {
 
     @Bind(R.id.list)
     ObservableRecyclerView mRecyclerView;
@@ -35,6 +34,8 @@ public class ListConferenceActivity extends AppCompatActivity implements ListTim
     Toolbar mToolBar;
     @Bind(R.id.star_layout)
     StarLayout mStarLayout;
+
+    private List<Conference> mConferenceList = new ArrayList<>();
 
     private float pointX;
     private float pointY;
@@ -67,7 +68,6 @@ public class ListConferenceActivity extends AppCompatActivity implements ListTim
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setOverScrollMode(View.OVER_SCROLL_NEVER);
-        mRecyclerView.setScrollViewCallbacks(this);
         mAdapter = new ListTimeTableAdapter(this, mConferenceList);
         mAdapter.setTimeTableCallback(this);
         mRecyclerView.setAdapter(mAdapter);
@@ -75,7 +75,6 @@ public class ListConferenceActivity extends AppCompatActivity implements ListTim
         mStarLayout.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, final MotionEvent event) {
-                //final float y = Util.getScreenHeightInPx(TimelineActivity.this) - event.getRawY();
                 pointX = event.getX();
                 pointY = event.getY();
                 return false;
@@ -98,21 +97,6 @@ public class ListConferenceActivity extends AppCompatActivity implements ListTim
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
-    }
-
-    @Override
-    public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
-
-    }
-
-    @Override
-    public void onDownMotionEvent() {
-
-    }
-
-    @Override
-    public void onUpOrCancelMotionEvent(ScrollState scrollState) {
-
     }
 
     @Override
