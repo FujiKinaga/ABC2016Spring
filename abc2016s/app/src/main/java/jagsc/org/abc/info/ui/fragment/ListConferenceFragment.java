@@ -41,7 +41,7 @@ public class ListConferenceFragment extends Fragment implements ShowConferencePr
     private ListConferenceAdapter mAdapter;
 
     private Fab mFab;
-    private LinearLayout mMapConference;
+    private ImageView mMapConference;
     private ImageView mMapBazaar;
 
     private ShowConferencePresenter mConferencePresenter;
@@ -68,7 +68,7 @@ public class ListConferenceFragment extends Fragment implements ShowConferencePr
         ButterKnife.bind(this, rootView);
 
         mFab = (Fab) getActivity().findViewById(R.id.fab);
-        mMapConference = (LinearLayout) getActivity().findViewById(R.id.map_conference);
+        mMapConference = (ImageView) getActivity().findViewById(R.id.map_conference);
         mMapBazaar = (ImageView) getActivity().findViewById(R.id.map_bazaar);
 
         if (!mFab.isShown()) {

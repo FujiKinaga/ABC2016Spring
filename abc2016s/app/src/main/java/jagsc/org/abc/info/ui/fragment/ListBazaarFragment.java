@@ -44,7 +44,7 @@ public class ListBazaarFragment extends Fragment implements ShowBazaarPresenter.
     private ListBazaarAdapter mAdapter;
 
     private Fab mFab;
-    private LinearLayout mMapConference;
+    private ImageView mMapConference;
     private ImageView mMapBazaar;
 
     private List<Bazaar> mBazaarList = new ArrayList<>();
@@ -67,7 +67,7 @@ public class ListBazaarFragment extends Fragment implements ShowBazaarPresenter.
         ButterKnife.bind(this, rootView);
 
         mFab = (Fab) getActivity().findViewById(R.id.fab);
-        mMapConference = (LinearLayout) getActivity().findViewById(R.id.map_conference);
+        mMapConference = (ImageView) getActivity().findViewById(R.id.map_conference);
         mMapBazaar = (ImageView) getActivity().findViewById(R.id.map_bazaar);
 
         if (!mFab.isShown()) {

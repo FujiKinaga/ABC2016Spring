@@ -9,7 +9,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.gordonwong.materialsheetfab.DimOverlayFrameLayout;
 import com.gordonwong.materialsheetfab.MaterialSheetFab;
@@ -47,14 +46,10 @@ public class MainActivity extends AppCompatActivity {
     DimOverlayFrameLayout mOverlay;
     @Bind(R.id.map_bazaar)
     ImageView mMapBazaar;
-    @Bind(R.id.map_4f)
-    ImageView mMap4F;
-    @Bind(R.id.map_6f)
-    ImageView mMap6F;
+    @Bind(R.id.map_conference)
+    ImageView mMapConference;
     @Bind(R.id.sheet)
     CardView mSheet;
-    @Bind(R.id.map_conference)
-    LinearLayout mMapConference;
 
     @OnClick(R.id.fab)
     void fab() {
@@ -71,8 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private PhotoViewAttacher mAttacherBazaar;
-    private PhotoViewAttacher mAttacher4f;
-    private PhotoViewAttacher mAttacher6f;
+    private PhotoViewAttacher mAttacherConference;
 
     private Drawer result;
 
@@ -90,16 +84,13 @@ public class MainActivity extends AppCompatActivity {
         mMapBazaar.setVisibility(View.GONE);
         mMapConference.setVisibility(View.VISIBLE);
 
-        Drawable bitmap = getResources().getDrawable(R.drawable.ic_map_bazaar);
-        Drawable bitmap_4f = getResources().getDrawable(R.drawable.ic_map_time_table_4f);
-        Drawable bitmap_6f = getResources().getDrawable(R.drawable.ic_map_time_table_6f);
-        mMapBazaar.setImageDrawable(bitmap);
-        mMap4F.setImageDrawable(bitmap_4f);
-        mMap6F.setImageDrawable(bitmap_6f);
+        Drawable bitmapBazaar = getResources().getDrawable(R.drawable.ic_map_bazaar);
+        Drawable bitmapConference = getResources().getDrawable(R.drawable.ic_map_conference);
+        mMapBazaar.setImageDrawable(bitmapBazaar);
+        mMapConference.setImageDrawable(bitmapConference);
 
         mAttacherBazaar = new PhotoViewAttacher(mMapBazaar);
-        mAttacher4f = new PhotoViewAttacher(mMap4F);
-        mAttacher6f = new PhotoViewAttacher(mMap6F);
+        mAttacherConference = new PhotoViewAttacher(mMapConference);
 
         mToolBar.setTitle(getString(R.string.title_time_table));
         setSupportActionBar(mToolBar);
@@ -216,8 +207,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Need to call clean-up
         mAttacherBazaar.cleanup();
-        mAttacher4f.cleanup();
-        mAttacher6f.cleanup();
+        mAttacherConference.cleanup();
     }
 
     public void setStarLayout() {

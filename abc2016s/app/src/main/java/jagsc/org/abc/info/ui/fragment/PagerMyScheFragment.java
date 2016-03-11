@@ -28,7 +28,7 @@ public class PagerMyScheFragment extends Fragment {
     HackyViewPager mViewpager;
 
     private Fab mFab;
-    private LinearLayout mMapConference;
+    private ImageView mMapConference;
     private ImageView mMapBazaar;
 
     private FragmentPagerItemAdapter adapter;
@@ -48,7 +48,7 @@ public class PagerMyScheFragment extends Fragment {
         mShowPosition = 0;
 
         mFab = (Fab) getActivity().findViewById(R.id.fab);
-        mMapConference = (LinearLayout) getActivity().findViewById(R.id.map_conference);
+        mMapConference = (ImageView) getActivity().findViewById(R.id.map_conference);
         mMapBazaar = (ImageView) getActivity().findViewById(R.id.map_bazaar);
 
         if (!mFab.isShown()) {

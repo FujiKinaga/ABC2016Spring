@@ -49,10 +49,8 @@ public class DetailConferenceActivity extends AppCompatActivity {
     LinearLayout mSpeakerCell;
     @Bind(R.id.overlay)
     DimOverlayFrameLayout mOverlay;
-    @Bind(R.id.map_4f)
-    ImageView mMap4f;
-    @Bind(R.id.map_6f)
-    ImageView mMap6f;
+    @Bind(R.id.map_conference)
+    ImageView mMapConference;
     @Bind(R.id.sheet)
     CardView mSheet;
     @Bind(R.id.fab)
@@ -84,8 +82,7 @@ public class DetailConferenceActivity extends AppCompatActivity {
         }
     }
 
-    private PhotoViewAttacher mAttacher4f;
-    private PhotoViewAttacher mAttacher6f;
+    private PhotoViewAttacher mAttacherConference;
 
     private MaterialSheetFab materialSheetFab;
 
@@ -112,13 +109,10 @@ public class DetailConferenceActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(getString(R.string.title_conference));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Drawable bitmap_4f = getResources().getDrawable(R.drawable.ic_map_time_table_4f);
-        Drawable bitmap_6f = getResources().getDrawable(R.drawable.ic_map_time_table_6f);
-        mMap4f.setImageDrawable(bitmap_4f);
-        mMap6f.setImageDrawable(bitmap_6f);
+        Drawable bitmapConference = getResources().getDrawable(R.drawable.ic_map_conference);
+        mMapConference.setImageDrawable(bitmapConference);
 
-        mAttacher4f = new PhotoViewAttacher(mMap4f);
-        mAttacher6f = new PhotoViewAttacher(mMap6f);
+        mAttacherConference = new PhotoViewAttacher(mMapConference);
 
         int sheetColor = getResources().getColor(R.color.view_background);
         int fabColor = getResources().getColor(R.color.main_color);
@@ -229,8 +223,7 @@ public class DetailConferenceActivity extends AppCompatActivity {
         super.onDestroy();
 
         // Need to call clean-up
-        mAttacher4f.cleanup();
-        mAttacher6f.cleanup();
+        mAttacherConference.cleanup();
         if (isChange) {
             BusHolder.get().post(new StarClickedEvent(mPosition));
         }

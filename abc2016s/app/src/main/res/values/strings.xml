@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ABC2016Spring</string>
+    <string name="app_name">ABC 2016 Spring</string>
 
     <!--NavigationDrawer用選択アイテム-->
     <string name="title_my_schedule">マイスケジュール</string>
