@@ -83,8 +83,7 @@
             android:text="https://github.com/chrisbanes/PhotoView"
             android:textSize="12sp"
             android:autoLink="web"
-            android:layout_gravity="center_horizontal"
-            />
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -100,8 +99,7 @@
             android:text="https://github.com/loopj/android-async-http"
             android:textSize="12sp"
             android:autoLink="web"
-            android:layout_gravity="center_horizontal"
-            />
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -117,8 +115,7 @@
             android:text="https://github.com/mikepenz/MaterialDrawer"
             android:textSize="12sp"
             android:autoLink="web"
-            android:layout_gravity="center_horizontal"
-            />
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -134,8 +131,7 @@
             android:text="https://github.com/ogaclejapan/SmartTabLayout"
             android:textSize="12sp"
             android:autoLink="web"
-            android:layout_gravity="center_horizontal"
-            />
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -151,8 +147,7 @@
             android:text="https://github.com/JakeWharton/butterknife"
             android:textSize="12sp"
             android:autoLink="web"
-            android:layout_gravity="center_horizontal"
-            />
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -168,8 +163,7 @@
             android:text="https://github.com/gowong/material-sheet-fab"
             android:textSize="12sp"
             android:autoLink="web"
-            android:layout_gravity="center_horizontal"
-            />
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -185,8 +179,7 @@
             android:text="https://github.com/ksoichiro/Android-ObservableScrollView"
             android:textSize="12sp"
             android:autoLink="web"
-            android:layout_gravity="center_horizontal"
-            />
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -202,8 +195,7 @@
             android:text="https://github.com/traex/RippleEffect"
             android:textSize="12sp"
             android:autoLink="web"
-            android:layout_gravity="center_horizontal"
-            />
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -219,8 +211,7 @@
             android:text="https://github.com/square/otto"
             android:textSize="12sp"
             android:autoLink="web"
-            android:layout_gravity="center_horizontal"
-            />
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -236,8 +227,7 @@
             android:text="https://get.fabric.io/"
             android:textSize="12sp"
             android:autoLink="web"
-            android:layout_gravity="center_horizontal"
-            />
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
